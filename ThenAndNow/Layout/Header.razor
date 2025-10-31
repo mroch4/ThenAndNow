@@ -1,0 +1,19 @@
+﻿<nav class="bg-dark py-3">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+            <a @onclick="() => NavigationService.Navigate(new QueryParams())">
+                <div class="d-flex flex-column flex-sm-row">
+                    <span>POZNAŃ</span>
+                    <span class="d-none d-sm-flex mx-2">|</span>
+                    <span>@Labels.ThenAndNow</span>
+                </div>
+            </a>
+            <div>
+                @foreach (var item in _navItems)
+                {
+                    <a href="@item.Route">@item.Label</a>
+                }
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,15 @@
+﻿@if (!BannerClosedByUser)
+{
+    <div class="alert alert-primary" role="alert">
+        <h6>@Labels.BannerHeading</h6>
+        <div class="mb-2">@Labels.BannerQuestion</div>
+        <ol>
+            <li class="mb-1">@Labels.BannerLine1</li>
+            <li class="mb-1">@Labels.BannerLine2</li>
+            <li class="mb-1">@Labels.BannerLine3</li>
+        </ol>
+        <div class="text-end">
+            <span class="fw-bold pointer" @onclick="OnClose">@Labels.BannerCloseButton</span>
+        </div>
+    </div>
+}

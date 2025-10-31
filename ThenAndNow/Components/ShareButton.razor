@@ -1,0 +1,13 @@
+﻿<button class="btn btn-outline-info">
+    <a href="@Url" target="_blank" rel="noopener noreferrer">
+        <i class="@Icon"></i> Share
+    </a>
+</button>
+
+@code {
+    [Parameter]
+    public string Url { get; set; }
+
+    [Parameter]
+    public string Icon { get; set; }
+}

@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/app.css",
+    "inputFile": "wwwroot/css/app.scss"
+  },
+  {
+    "outputFile": "wwwroot/js/firebase.es5.js",
+    "inputFile": "wwwroot/js/firebase.js"
+  },
+  {
+    "outputFile": "wwwroot/js/leaflet.es5.js",
+    "inputFile": "wwwroot/js/leaflet.js"
+  }
+]

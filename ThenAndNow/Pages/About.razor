@@ -1,0 +1,26 @@
+﻿@attribute [Route(Routes.About)]
+
+<h3>@Labels.About</h3>
+
+<div class="d-flex flex-column col-12 col-sm-8">
+    <p style="text-align: justify">@Labels.Content</p>
+    <h6>@Labels.Sources</h6>
+    <ul>
+        <li>
+            <a href="@Routes.Cyryl" target="_blank">@Labels.Cyryl</a>
+        </li>
+        <li>
+            <a href="@Routes.Fotopolska" target="_blank">@Labels.Fotopolska</a>
+        </li>
+    </ul>
+    <h6>@Labels.Contact</h6>
+    <ul>
+        <li>@Labels.Email</li>
+        <li>
+            <a href="@Routes.Flickr" target="_blank">@Labels.Flickr</a>
+        </li>
+        <li>
+            <a href="@Routes.Github" target="_blank">@Labels.Github</a>
+        </li>
+    </ul>
+</div>

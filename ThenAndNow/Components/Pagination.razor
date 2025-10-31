@@ -1,0 +1,17 @@
+﻿<div class="flex-center mb-4">
+    @if (QueryParams.CurrentPage > 1)
+    {
+        <span class="m-2 pointer" @onclick="() => GoToPage(0)">&lt;&lt;</span>
+        <span class="m-2 pointer" @onclick="Previous">&lt;</span>
+    }
+    @for (var i = 0; i < PagesCount; i++)
+    {
+        var pageIndex = i + 1;
+        <span class="m-2 pointer @GetCurrentPageClass(i)" @onclick="() => GoToPage(pageIndex)">@pageIndex</span>
+    }
+    @if (QueryParams.CurrentPage < PagesCount)
+    {
+        <span class="m-2 pointer" @onclick="Next">&gt;</span>
+        <span class="m-2 pointer" @onclick="() => GoToPage(PagesCount)">&gt;&gt;</span>
+    }
+</div>

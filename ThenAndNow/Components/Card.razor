@@ -1,0 +1,52 @@
+﻿@using ThenAndNow.Models.UI
+
+<Loader Loaded="Loaded">
+    <article class="mb-5">
+        <section class="header">
+            <header class="d-flex align-items-center justify-content-between">
+                <h4 class="m-0 pointer" @onclick="() => NavigationService.NavigateToEntry(Entry.Id)">#@Entry.Id - @Entry.Title</h4>
+                <div class="buttons text-end">
+                    <a href="@(Routes.GoogleMapBaseUrl + GetLocation())" target="_blank">
+                        <img alt="Map Icon" class="tooltip-test" src="icons/map.svg" title="@Labels.MapIcon" />
+                    </a>
+                    <img alt="More Details" class="ms-3 tooltip-test" src="icons/details.svg" title="@Labels.MoreDetailsIcon" @onclick="ToggleDetails" />
+                </div>
+            </header>
+        </section>
+        @if (ShowDetails)
+        {
+            <div>
+                <hr />
+                <div class="d-flex justify-content-end my-2">
+                    <span>@GetRatingDesc()</span>
+                    @if (RatingEnabled is true)
+                    {
+                        <img alt="Thumbs up" class="mx-2" src="icons/thumbsUp.svg" title="@Labels.ThumbsUp" @onclick="ThumbsUp" />
+                        <img alt="Thumbs down" src="icons/thumbsDown.svg" title="@Labels.ThumbsDown" @onclick="ThumbsDown" />
+                    }
+                </div>
+                <Loader Loaded="DescriptionLoaded">
+                    <p>@Entry.Description</p>
+                </Loader>
+                <div class="d-flex flex-wrap">
+                    @foreach (var tag in Entry.Tags)
+                    {
+                        <span class="tag" @onclick="() => NavigationService.Navigate(new QueryParams { Tag = tag })">@tag</span>
+                    }
+                </div>
+            </div>
+        }
+        <figure class="text-center mt-3">
+            <picture>
+                <source media="(max-width: 576px)" srcset="@GetImagePath(ImageSize.Sm)" />
+                <source media="(max-width: 992px)" srcset="@GetImagePath(ImageSize.Md)" />
+                <img alt="@Entry.Title" loading="lazy" src="@GetImagePath(ImageSize.Lg)"
+                     @onclick="@(() => { OriginalPhoto = !OriginalPhoto; })" />
+            </picture>
+            <figcaption>
+                <i>@(Labels.FigcaptionBase + GetFigcaption()) </i>
+            </figcaption>
+        </figure>
+        @* <ShareButtons Id="Entry.Id" /> *@
+    </article>
+</Loader>

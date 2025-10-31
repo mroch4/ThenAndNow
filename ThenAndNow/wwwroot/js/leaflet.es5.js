@@ -1,0 +1,35 @@
+﻿"use strict";
+
+window.leafletMapInterop = {
+    zoom: 13,
+
+    init: function init(latitude, longitude, entries, dotNetObjectReference) {
+        var _this = this;
+
+        this.map = L.map("map", {
+            center: [latitude, longitude],
+            zoom: this.zoom
+        });
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(this.map);
+
+        entries.forEach(function (entry) {
+            return L.marker([entry.b.a, entry.b.b], {
+
+                icon: L.icon({
+                    iconSize: [25, 41],
+                    iconAnchor: [13, 41],
+                    iconUrl: "icons/marker.png",
+                    popupAnchor: [-1, -10]
+                })
+            }).addTo(_this.map).bindPopup("<b>" + entry.e + "</b>").on("click", function () {
+                _this.map.setView([entry.b.a, entry.b.b], _this.map.zoom);
+                dotNetObjectReference.invokeMethodAsync("OnMarkerOpened", entry.a);
+            }).on("popupclose", function () {
+                _this.map.setView([latitude, longitude], _this.zoom);
+                dotNetObjectReference.invokeMethodAsync("OnMarkerClosed");
+            });
+        });
+    }
+};
+

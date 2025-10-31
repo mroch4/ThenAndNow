@@ -1,0 +1,12 @@
+﻿<Loader Loaded="TagsArray != null">
+    <div class="flex-center flex-wrap">
+        @foreach (var item in TagsArray)
+        {
+            <span class="pointer m-2"
+                  @onclick="() => NavigationService.Navigate(new QueryParams { Tag = item.Tag })"
+                  style="font-size: @(GetFontSize(item.Count))px">
+                @item.Tag
+            </span>
+        }
+    </div>
+</Loader>

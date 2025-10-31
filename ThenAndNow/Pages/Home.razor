@@ -1,0 +1,47 @@
+﻿<Loader Loaded="Entries != null" NoData="Entries == null || Entries?.Total == 0">
+
+    <div class="d-flex justify-content-end w-100 my-2 gap-3">
+        <div class="d-flex flex-column">
+            <InputSelect TValue="Sorting"
+                         @bind-Value="QueryParams.Sorting" @bind-Value:after="() => NavigationService.Navigate(QueryParams)"
+                         class="form-select form-select-sm">
+                @foreach (var option in SortingOptions)
+                {
+                    <option value="@(option.Value)">@option.Label</option>
+                }
+            </InputSelect>
+        </div>
+@*         <div class="d-flex flex-column">
+            <code>pageSize:</code>
+            <InputSelect TValue="int"
+                         @bind-Value="QueryParams.PageSize" @bind-Value:after="() => NavigationService.Navigate(QueryParams)"
+                         class="form-select form-select-sm">
+                @foreach (var pageSize in PageSizes)
+                {
+                    <option value="@pageSize">@pageSize</option>
+                }
+            </InputSelect>
+        </div> *@
+    </div>
+
+    @if (!string.IsNullOrEmpty(Tag))
+    {
+        <div class="d-flex align-items-center mb-4">
+            <h5 class="m-0">@Labels.TagsResult "@Tag" (@Entries.Total)</h5>
+            <a class="ms-2" @onclick="() => NavigationService.Navigate(new QueryParams())">
+                <img alt="Cancel Icon" src="icons/cancel.svg" />
+            </a>
+        </div>
+    }
+
+    @foreach (var entry in Entries.Items)
+    {
+        <Card Entry="@entry" />
+    }
+    
+    @if (PagesCount > 1)
+    {
+        <Pagination PagesCount="PagesCount" QueryParams="QueryParams" />
+    }
+
+</Loader>
