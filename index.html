@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="pl">
-
-<head>
+  <head>
     <!--meta-->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +9,7 @@
     <meta name="description" content="Poznań na historycznych fotografiach" />
     <meta name="keywords" content="poznań, zdjęcia, fotografie, historia" />
 
-    <base href="/" />
+    <base href="/ThenAndNow/" />
     <title>Poznań | Dawniej & Dziś</title>
 
     <link rel="icon" href="favicon.ico" type="image/ico" />
@@ -20,26 +19,28 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.min.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
+      <svg class="loading-progress">
+        <circle r="40%" cx="50%" cy="50%" />
+        <circle r="40%" cx="50%" cy="50%" />
+      </svg>
+      <div class="loading-progress-text"></div>
     </div>
 
     <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
+      An unhandled error has occurred.
+      <a href="" class="reload">Reload</a>
+      <a class="dismiss">🗙</a>
     </div>
 
     <!-- Blazor scripts -->
     <script src="_framework/blazor.webassembly.js"></script>
-    <script>navigator.serviceWorker.register('js/service-worker.js');</script>
+    <script>
+      navigator.serviceWorker.register("js/service-worker.js");
+    </script>
 
     <!-- Leaflet -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -63,6 +64,5 @@
         gtag("js", new Date());
         gtag("config", "G-MZRRG17H7D");
     </script>-->
-</body>
-
+  </body>
 </html>
