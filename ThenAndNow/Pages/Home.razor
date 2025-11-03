@@ -11,7 +11,7 @@
                 }
             </InputSelect>
         </div>
-@*         <div class="d-flex flex-column">
+        @*         <div class="d-flex flex-column">
             <code>pageSize:</code>
             <InputSelect TValue="int"
                          @bind-Value="QueryParams.PageSize" @bind-Value:after="() => NavigationService.Navigate(QueryParams)"
@@ -27,18 +27,17 @@
     @if (!string.IsNullOrEmpty(Tag))
     {
         <div class="d-flex align-items-center mb-4">
-            <h5 class="m-0">@Labels.TagsResult "@Tag" (@Entries.Total)</h5>
-            <a class="ms-2" @onclick="() => NavigationService.Navigate(new QueryParams())">
+            <a class="me-2" @onclick="() => NavigationService.Navigate(new QueryParams())">
                 <img alt="Cancel Icon" src="icons/cancel.svg" />
             </a>
+            <h5 class="m-0">@Labels.TagsResult "@Tag" (@Entries.Total)</h5>
         </div>
     }
-
-    @foreach (var entry in Entries.Items)
-    {
-        <Card Entry="@entry" />
-    }
     
+    <Virtualize Context="entry" Items="@Entries.Items" ItemSize="1200" OverscanCount="1">
+        <Card Entry="@entry" />
+    </Virtualize>
+
     @if (PagesCount > 1)
     {
         <Pagination PagesCount="PagesCount" QueryParams="QueryParams" />

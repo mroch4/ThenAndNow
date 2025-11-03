@@ -1,0 +1,85 @@
+{
+  "votes": [
+    null,
+    {
+      "ratingValue": 2,
+      "votesAmount": 2
+    },
+    {
+      "ratingValue": 5,
+      "votesAmount": 5
+    },
+    {
+      "ratingValue": 4,
+      "votesAmount": 4
+    },
+    {
+      "ratingValue": 4,
+      "votesAmount": 4
+    },
+    {
+      "ratingValue": 4,
+      "votesAmount": 4
+    },
+    {
+      "ratingValue": 3,
+      "votesAmount": 3
+    },
+    {
+      "ratingValue": 2,
+      "votesAmount": 2
+    },
+    {
+      "ratingValue": 3,
+      "votesAmount": 3
+    },
+    {
+      "ratingValue": 4,
+      "votesAmount": 4
+    },
+    {
+      "ratingValue": 3,
+      "votesAmount": 3
+    },
+    {
+      "ratingValue": 5,
+      "votesAmount": 5
+    },
+    {
+      "ratingValue": 1,
+      "votesAmount": 1
+    },
+    {
+      "ratingValue": 1,
+      "votesAmount": 1
+    },
+    {
+      "ratingValue": 1,
+      "votesAmount": 1
+    },
+    {
+      "ratingValue": 1,
+      "votesAmount": 1
+    },
+    {
+      "ratingValue": 1,
+      "votesAmount": 1
+    },
+    {
+      "ratingValue": 1,
+      "votesAmount": 1
+    },
+    {
+      "ratingValue": 1,
+      "votesAmount": 1
+    },
+    {
+      "ratingValue": 1,
+      "votesAmount": 1
+    },
+    {
+      "ratingValue": 1,
+      "votesAmount": 1
+    }
+  ]
+}

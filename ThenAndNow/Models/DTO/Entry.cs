@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Globalization;
+using System.Text.Json.Serialization;
 
 namespace ThenAndNow.Models.DTO
 {
@@ -38,10 +39,10 @@ namespace ThenAndNow.Models.DTO
         public string Then { get; set; }
 
         [JsonPropertyName("b")]
-        public string NowString { get; set; }
+        public long NowNumber { get; set; }
 
         [JsonIgnore]
-        public DateTime Now => DateTime.TryParse($"20{NowString}", out var result) ? result : new DateTime();
+        public DateTime Now => DateTime.TryParseExact($"20{NowNumber}", Constants.Constants.EntryDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out var result) ? result : new DateTime();
     }
 
     public class Details

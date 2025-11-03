@@ -7,7 +7,7 @@
     },
     "c": {
       "a": "23/08/1965",
-      "b": "19-08-24T07:03"
+      "b": 1908240703
     },
     "d": [ "winogrady" ],
     "e": "Zdjęcie lotnicze Winograd"
@@ -20,7 +20,7 @@
     },
     "c": {
       "a": "lata 80. XX wieku",
-      "b": "16-06-08T13:15"
+      "b": 1606081315
     },
     "d": [ "osiedle", "prl", "winogrady" ],
     "e": "Osiedle Kosmonautów"
@@ -33,7 +33,7 @@
     },
     "c": {
       "a": "lata 80. XX wieku",
-      "b": "16-06-08T12:48"
+      "b": 1606081248
     },
     "d": [ "park", "prl", "winogrady" ],
     "e": "Park Gagarina"
@@ -46,7 +46,7 @@
     },
     "c": {
       "a": "ok. 1945 roku",
-      "b": "16-06-07T08:54"
+      "b": 1606070854
     },
     "d": [ "ostrów tumski", "most", "śródka", "zniszczenia wojenne" ],
     "e": "Most Biskupa Jordana"
@@ -59,7 +59,7 @@
     },
     "c": {
       "a": "ok. 1945 roku",
-      "b": "19-01-19T12:44"
+      "b": 1901191244
     },
     "d": [ "stary rynek", "kamienica", "ulica", "zniszczenia wojenne" ],
     "e": "Ulica Żydowska"
@@ -72,7 +72,7 @@
     },
     "c": {
       "a": "koniec XIX wieku",
-      "b": "16-06-07T09:27"
+      "b": 1606070927
     },
     "d": [ "pomnik", "stary rynek" ],
     "e": "Pomnik Bamberki"
@@ -85,7 +85,7 @@
     },
     "c": {
       "a": "ok. 1945 roku",
-      "b": "19-01-19T12:48"
+      "b": 1901191248
     },
     "d": [ "stary rynek", "kamienica", "zniszczenia wojenne" ],
     "e": "Kamienica pod daszkiem"
@@ -98,7 +98,7 @@
     },
     "c": {
       "a": "koniec XIX wieku",
-      "b": "16-06-07T09:46"
+      "b": 1606070946
     },
     "d": [ "plac" ],
     "e": "Plac Kolegiacki"
@@ -111,7 +111,7 @@
     },
     "c": {
       "a": "koniec XIX wieku",
-      "b": "19-01-19T13:01"
+      "b": 1901191301
     },
     "d": [ "ulica" ],
     "e": "Ulica Za Bramką"
@@ -124,7 +124,7 @@
     },
     "c": {
       "a": "ok. 1945 roku",
-      "b": "19-01-19T13:06"
+      "b": 1901191306
     },
     "d": [ "obiekty sakralne", "zniszczenia wojenne" ],
     "e": "Kościół Bernardynów"
@@ -137,7 +137,7 @@
     },
     "c": {
       "a": "koniec XIX wieku",
-      "b": "19-01-19T13:25"
+      "b": 1901191325
     },
     "d": [ "garbary", "ulica" ],
     "e": "Ulica Piaskowa"
@@ -150,7 +150,7 @@
     },
     "c": {
       "a": "lata 50. XX wieku",
-      "b": "21-10-02T17:01"
+      "b": 2110021701
     },
     "d": [ "kamienica" ],
     "e": "Dom Dziecka"
@@ -163,7 +163,7 @@
     },
     "c": {
       "a": "początek XX wieku",
-      "b": "21-10-02T15:09"
+      "b": 2110021509
     },
     "d": [ "obiekty sakralne" ],
     "e": "Kościół Wszystkich Świętych"
@@ -176,7 +176,7 @@
     },
     "c": {
       "a": "koniec XIX wieku",
-      "b": "21-10-02T14:50"
+      "b": 2110021450
     },
     "d": [ "pomnik", "stary rynek" ],
     "e": "Figura św. Jana Nepomucena"
@@ -189,7 +189,7 @@
     },
     "c": {
       "a": "koniec XIX wieku",
-      "b": "21-10-02T14:37"
+      "b": 2110021437
     },
     "d": [ "obiekty sakralne", "synagoga" ],
     "e": "Nowa Synagoga"
@@ -202,7 +202,7 @@
     },
     "c": {
       "a": "ok. 1945 roku",
-      "b": "21-10-02T14:41"
+      "b": 2110021441
     },
     "d": [ "obiekty sakralne", "synagoga", "zniszczenia wojenne" ],
     "e": "Nowa Synagoga"
@@ -215,7 +215,7 @@
     },
     "c": {
       "a": "początek XX wieku",
-      "b": "21-10-02T14:32"
+      "b": 2110021432
     },
     "d": [ "kamienica", "ulica" ],
     "e": "Ulica Stawna"
@@ -228,7 +228,7 @@
     },
     "c": {
       "a": "lata 70. XX wieku",
-      "b": "21-10-30T12:03"
+      "b": 2110301203
     },
     "d": [ "cytadela", "park", "winogrady" ],
     "e": "Amfiteatr w Parku Cytadela"
@@ -241,7 +241,7 @@
     },
     "c": {
       "a": "wiosna 1945 roku",
-      "b": "21-10-30T11:31"
+      "b": 2110301131
     },
     "d": [ "cytadela", "winogrady", "zniszczenia wojenne" ],
     "e": "Zdobycie Cytadeli"
@@ -254,7 +254,7 @@
     },
     "c": {
       "a": "początek XX wieku",
-      "b": "21-10-30T11:43"
+      "b": 2110301143
     },
     "d": [ "cytadela", "park", "winogrady" ],
     "e": "Brama Polna (Północna)"
@@ -267,7 +267,7 @@
     },
     "c": {
       "a": "lata 30. XX wieku",
-      "b": "22-04-23T16:05"
+      "b": 2204231605
     },
     "d": [ "park", "szeląg" ],
     "e": "Park Szelągowski"
@@ -280,7 +280,7 @@
     },
     "c": {
       "a": "ok. 1945 roku",
-      "b": "22-04-23T12:28"
+      "b": 2204231228
     },
     "d": [ "jeżyce", "kamienica" ],
     "e": "Kamienica narożna Dąbrowskiego 1"
@@ -293,7 +293,7 @@
     },
     "c": {
       "a": "koniec XIX wieku",
-      "b": "22-12-04T13:27"
+      "b": 2212041327
     },
     "d": [ "śródka", "ulica" ],
     "e": "Ulica Cybińska"
@@ -306,7 +306,7 @@
     },
     "c": {
       "a": "koniec XIX wieku",
-      "b": "22-12-04T13:32"
+      "b": 2212041332
     },
     "d": [ "śródka", "ulica" ],
     "e": "Ulica Ostrówek"
@@ -319,7 +319,7 @@
     },
     "c": {
       "a": "koniec XIX wieku",
-      "b": "16-06-07T08:59"
+      "b": 1606070859
     },
     "d": [ "ostrów tumski", "most", "śródka" ],
     "e": "Most Biskupa Jordana"
@@ -332,7 +332,7 @@
     },
     "c": {
       "a": "początek XX wieku",
-      "b": "16-06-07T09:26"
+      "b": 1606070926
     },
     "d": [ "ratusz", "stary rynek" ],
     "e": "Łącznik ratusza"
@@ -345,7 +345,7 @@
     },
     "c": {
       "a": "początek XX wieku",
-      "b": "22-04-23T14:07"
+      "b": 2204231407
     },
     "d": [ "obiekty sakralne", "plac" ],
     "e": "Plac Świętego Piotra"
@@ -358,7 +358,7 @@
     },
     "c": {
       "a": "początek XX wieku",
-      "b": "22-12-17T13:53"
+      "b": 2212171353
     },
     "d": [ "kamienica" ],
     "e": "Kamienica Żelazko"
@@ -371,7 +371,7 @@
     },
     "c": {
       "a": "lata 80. XX wieku",
-      "b": "22-12-17T13:20"
+      "b": 2212171320
     },
     "d": [ "stary browar" ],
     "e": "Browar Huggerów"
@@ -384,7 +384,7 @@
     },
     "c": {
       "a": "ok. 1945 roku",
-      "b": "22-04-23T12:33"
+      "b": 2204231233
     },
     "d": [ "dzielnica cesarska", "opera", "zniszczenia wojenne" ],
     "e": "Teatr Wielki"

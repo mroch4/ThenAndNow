@@ -1,0 +1,248 @@
+[
+  {
+    "a": 1,
+    "b": {
+      "a": 50.57461,
+      "b": 22.05785
+    },
+    "c": {
+      "a": "koniec lat 80. XX wieku",
+      "b": "09-06-15T15:43"
+    },
+    "d": [
+      "os. Centralne",
+      "ul. KEN",
+      "ul. Wojska Polskiego"
+    ],
+    "e": "Skrzyżowanie KEN x Wojska Polskiego"
+  },
+  {
+    "a": 2,
+    "b": {
+      "a": 50.57544,
+      "b": 22.06073
+    },
+    "c": {
+      "a": "koniec lat 80. XX wieku",
+      "b": "09-06-15T15:43"
+    },
+    "d": [
+      "os. Centralne",
+      "ul. KEN"
+    ],
+    "e": "Krzyż przy ul. KEN"
+  },
+  {
+    "a": 3,
+    "b": {
+      "a": 50.57422,
+      "b": 22.06073
+    },
+    "c": {
+      "a": "koniec lat 80. XX wieku",
+      "b": "09-06-15T16:06"
+    },
+    "d": [
+      "os. Centralne",
+      "plac zabaw",
+      "ul. KEN"
+    ],
+    "e": "Plac zabaw między wieżowcami KEN"
+  },
+  {
+    "a": 4,
+    "b": {
+      "a": 50.56562,
+      "b": 22.06647
+    },
+    "c": {
+      "a": "lata 80. XX wieku",
+      "b": "09-06-15T17:03"
+    },
+    "d": [
+      "os. Śródmieście",
+      "ul. Staszica"
+    ],
+    "e": "Bar mleczny (ul. Staszica)"
+  },
+  {
+    "a": 5,
+    "b": {
+      "a": 50.5738,
+      "b": 22.05771
+    },
+    "c": {
+      "a": "koniec lat 80. XX wieku",
+      "b": 1005221403
+    },
+    "d": [
+      "os. Centralne",
+      "ul. KEN"
+    ],
+    "e": "Pawilony handlowe przy ul. KEN"
+  },
+  {
+    "a": 6,
+    "b": {
+      "a": 50.59838,
+      "b": 22.02933
+    },
+    "c": {
+      "a": "połowa lat 70. XX wieku",
+      "b": 1206251236
+    },
+    "d": [
+      "parowozownia",
+      "Rozwadów"
+    ],
+    "e": "Parowozownia"
+  },
+  {
+    "a": 7,
+    "b": {
+      "a": 50.59949,
+      "b": 22.02765
+    },
+    "c": {
+      "a": "maj 2001",
+      "b": 1206271353
+    },
+    "d": [
+      "parowozownia",
+      "Rozwadów"
+    ],
+    "e": "Parowozownia"
+  },
+  {
+    "a": 8,
+    "b": {
+      "a": 50.59142,
+      "b": 22.04819
+    },
+    "c": {
+      "a": "",
+      "b": 1310311209
+    },
+    "d": [
+      "fara",
+      "Rozwadów"
+    ],
+    "e": "Fara"
+  },
+  {
+    "a": 9,
+    "b": {
+      "a": 50.59183,
+      "b": 22.04843
+    },
+    "c": {
+      "a": "",
+      "b": 1310311218
+    },
+    "d": [
+      "fara",
+      "Rozwadów"
+    ],
+    "e": "Fara"
+  },
+  {
+    "a": 10,
+    "b": {
+      "a": 50.59145,
+      "b": 22.04366
+    },
+    "c": {
+      "a": "",
+      "b": 1312291413
+    },
+    "d": [
+      "Rozwadów",
+      "ul. Jagiellońska",
+      "ulica"
+    ],
+    "e": "Jagiellońska"
+  },
+  {
+    "a": 11,
+    "b": {
+      "a": 50.59153,
+      "b": 22.04453
+    },
+    "c": {
+      "a": "",
+      "b": 1312291349
+    },
+    "d": [
+      "Rozwadów",
+      "ul. Jagiellońska",
+      "ulica"
+    ],
+    "e": "Jagiellońska"
+  },
+  {
+    "a": 12,
+    "b": {
+      "a": 50.59165,
+      "b": 22.04962
+    },
+    "c": {
+      "a": "przełom XIX i XX wieku",
+      "b": 1312291424
+    },
+    "d": [
+      "fara",
+      "Rozwadów"
+    ],
+    "e": "Fara"
+  },
+  {
+    "a": 13,
+    "b": {
+      "a": 50.58578,
+      "b": 22.04702
+    },
+    "c": {
+      "a": "",
+      "b": 1312291441
+    },
+    "d": [
+      "kapucyni",
+      "klasztor",
+      "Rozwadów"
+    ],
+    "e": "Klasztor"
+  },
+  {
+    "a": 14,
+    "b": {
+      "a": 50.59135,
+      "b": 22.04993
+    },
+    "c": {
+      "a": "",
+      "b": 1402241221
+    },
+    "d": [
+      "fara",
+      "Rozwadów"
+    ],
+    "e": "Fara"
+  },
+  {
+    "a": 15,
+    "b": {
+      "a": 50.58597,
+      "b": 22.04548
+    },
+    "c": {
+      "a": "",
+      "b": 1402241242
+    },
+    "d": [
+      "kapucyni",
+      "klasztor",
+      "Rozwadów"
+    ],
+    "e": "Klasztor"
+  }
+]

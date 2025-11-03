@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "comments": {
+      ".read": true,
+      ".write": true
+    },
+    "details": {
+      ".read": true
+    },
+    "votes2": {
+      ".read": true,
+      ".write": true,
+      "$item": {
+        ".validate": "newData.hasChildren(['a', 'b']) && newData.child('a').isNumber() && newData.child('b').isNumber() && newData.child('b').val() >= 0"
+      }
+    }
+  }
+}
