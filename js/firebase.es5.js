@@ -14,6 +14,7 @@ firebase.initializeApp({
 var database = firebase.database();
 
 window.firebaseInterop = {
+    // Entries
     getDetailsById: function getDetailsById(refPath) {
         var snapshot, data;
         return regeneratorRuntime.async(function getDetailsById$(context$1$0) {
@@ -42,6 +43,7 @@ window.firebaseInterop = {
         }, null, this, [[0, 8]]);
     },
 
+    // Rating
     getRatingById: function getRatingById(refPath) {
         var snapshot, data;
         return regeneratorRuntime.async(function getRatingById$(context$1$0) {
@@ -96,6 +98,60 @@ window.firebaseInterop = {
                     return context$1$0.stop();
             }
         }, null, this, [[0, 6]]);
+    },
+
+    // Replies
+    addReply: function addReply(refPath, reply) {
+        var replyRef;
+        return regeneratorRuntime.async(function addReply$(context$1$0) {
+            while (1) switch (context$1$0.prev = context$1$0.next) {
+                case 0:
+                    context$1$0.prev = 0;
+                    replyRef = push(ref(database, refPath));
+
+                    set(reply);
+                    return context$1$0.abrupt("return", true);
+
+                case 6:
+                    context$1$0.prev = 6;
+                    context$1$0.t0 = context$1$0["catch"](0);
+
+                    console.error("firebaseInterop.addReply error: ", context$1$0.t0);
+                    return context$1$0.abrupt("return", false);
+
+                case 10:
+                case "end":
+                    return context$1$0.stop();
+            }
+        }, null, this, [[0, 6]]);
+    },
+
+    getRepliesById: function getRepliesById(refPath) {
+        var snapshot, data;
+        return regeneratorRuntime.async(function getRepliesById$(context$1$0) {
+            while (1) switch (context$1$0.prev = context$1$0.next) {
+                case 0:
+                    context$1$0.prev = 0;
+                    context$1$0.next = 3;
+                    return regeneratorRuntime.awrap(database.ref(refPath).once("value"));
+
+                case 3:
+                    snapshot = context$1$0.sent;
+                    data = snapshot.val();
+                    return context$1$0.abrupt("return", data || []);
+
+                case 8:
+                    context$1$0.prev = 8;
+                    context$1$0.t0 = context$1$0["catch"](0);
+
+                    console.error("firebaseInterop.getRepliesById error: ", context$1$0.t0);
+                    return context$1$0.abrupt("return", []);
+
+                case 12:
+                case "end":
+                    return context$1$0.stop();
+            }
+        }, null, this, [[0, 8]]);
     }
 };
 
