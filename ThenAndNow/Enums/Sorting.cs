@@ -1,4 +1,4 @@
-﻿namespace ThenAndNow.Models
+﻿namespace ThenAndNow.Enums
 {
     public enum Sorting
     {
@@ -19,7 +19,7 @@
 
     public enum SortDirection
     {
-        Ascending,
-        Descending
+        Asc,
+        Desc
     }
 }

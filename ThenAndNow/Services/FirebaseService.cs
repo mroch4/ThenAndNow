@@ -8,37 +8,7 @@ namespace ThenAndNow.Services
 {
     public class FirebaseService(AppConfiguration appConfiguration, IJSRuntime jsRuntime) : IFirebaseService, IAsyncDisposable
     {
-        #region Public methods
-
-        public async Task<Rating> AddReply(int id)
-        {
-            try
-            {
-                var refPath = GetRefPath(appConfiguration.ReplyDb, id);
-                var result = await jsRuntime.InvokeAsync<Rating>(JsInteropKeys.GetVotesById, refPath);
-                return result;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"FirebaseService.AddReply error: {ex.Message}");
-                return new Rating { Score = 0, Total = 0 };
-            }
-        }
-
-        public async Task<Rating> GetRatingById(int id)
-        {
-            try
-            {
-                var refPath = GetRefPath(appConfiguration.RatingDb, id);
-                var result = await jsRuntime.InvokeAsync<Rating>(JsInteropKeys.GetVotesById, refPath);
-                return result;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"FirebaseService.GetRatingById error: {ex.Message}");
-                return new Rating { Score = 0, Total = 0 };
-            }
-        }
+        #region Entries
 
         public async Task<Details> GetDetailsById(int id)
         {
@@ -50,8 +20,27 @@ namespace ThenAndNow.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"FirebaseService.GetDetailsById error: {ex.Message}");
+                Console.WriteLine($"{nameof(FirebaseService)}.{nameof(GetDetailsById)} error: {ex.Message}");
                 return new Details();
+            }
+        }
+
+        #endregion
+
+        #region Rating
+
+        public async Task<Rating> GetRatingById(int id)
+        {
+            try
+            {
+                var refPath = GetRefPath(appConfiguration.RatingDb, id);
+                var result = await jsRuntime.InvokeAsync<Rating>(JsInteropKeys.GetRatingById, refPath);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{nameof(FirebaseService)}.{nameof(GetRatingById)} error: {ex.Message}");
+                return new Rating { Score = 0, Total = 0 };
             }
         }
 
@@ -83,15 +72,6 @@ namespace ThenAndNow.Services
             return await UpdateRating(update) ? (true, update) : (false, original);
         }
 
-        public async ValueTask DisposeAsync()
-        {
-            await Task.CompletedTask;
-        }
-
-        #endregion
-
-        #region Private methods
-
         private async Task<bool> UpdateRating(Rating rating)
         {
             try
@@ -101,9 +81,50 @@ namespace ThenAndNow.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"FirebaseService.UpdateRating error: {ex.Message}");
+                Console.WriteLine($"{nameof(FirebaseService)}.{nameof(UpdateRating)} error: {ex.Message}");
                 return false;
             }
+        }
+
+        #endregion
+
+        #region Replies
+
+        public async Task<(bool, Reply)> AddReply(Reply reply)
+        {
+            try
+            {
+                var refPath = GetRefPath(appConfiguration.ReplyDb, reply.EntryId);
+                var result = await jsRuntime.InvokeAsync<bool>(JsInteropKeys.AddReply, refPath, reply);
+                return (result, reply);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{nameof(FirebaseService)}.{nameof(AddReply)} error: {ex.Message}");
+                return (false, reply);
+            }
+        }
+
+        public async Task<Reply[]> GetRepliesById(int id)
+        {
+            try
+            {
+                var refPath = GetRefPath(appConfiguration.ReplyDb, id);
+                var result = await jsRuntime.InvokeAsync<Reply[]>(JsInteropKeys.GetRepliesById, refPath);
+                return result.OrderByDescending(x => x.Timestamp).ToArray();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{nameof(FirebaseService)}.{nameof(GetRepliesById)} error: {ex.Message}");
+                return [];
+            }
+        }
+
+        #endregion
+
+        public async ValueTask DisposeAsync()
+        {
+            await Task.CompletedTask;
         }
 
         private static string GetRefPath(FirebaseConfiguration config, int id)
@@ -119,7 +140,5 @@ namespace ThenAndNow.Services
 
             return url;
         }
-
-        #endregion
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace ThenAndNow.Models.UI
+﻿namespace ThenAndNow.Enums
 {
     public enum ImageSize
     {

@@ -4,10 +4,28 @@ namespace ThenAndNow.Interfaces
 {
     public interface IFirebaseService
     {
-        Task<Rating> AddReply(int id);
-        public Task<Rating> GetRatingById(int id);
+        #region Entries
+
         public Task<Details> GetDetailsById(int id);
+
+        #endregion
+
+        #region Rating
+
+        public Task<Rating> GetRatingById(int id);
+
         public Task<(bool Success, Rating Rating)> ThumbsDown(int id);
+
         public Task<(bool Success, Rating Rating)> ThumbsUp(int id);
+
+        #endregion
+
+        #region Replies
+
+        public Task<(bool Success, Reply Reply)> AddReply(Reply reply);
+
+        public Task<Reply[]> GetRepliesById(int id);
+
+        #endregion
     }
 }

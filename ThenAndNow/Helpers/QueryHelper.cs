@@ -1,4 +1,5 @@
 ﻿using ThenAndNow.Constants;
+using ThenAndNow.Enums;
 using ThenAndNow.Models;
 
 namespace ThenAndNow.Helpers
@@ -60,7 +61,7 @@ namespace ThenAndNow.Helpers
 
         private static bool ShouldIncludeSorting(SortBy sortBy, SortDirection sortDirection)
         {
-            return !(sortBy == SortBy.Id && sortDirection == SortDirection.Descending);
+            return !(sortBy == SortBy.Id && sortDirection == SortDirection.Desc);
         }
 
         #endregion

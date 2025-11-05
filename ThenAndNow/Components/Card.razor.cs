@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Globalization;
 using ThenAndNow.Constants;
+using ThenAndNow.Enums;
 using ThenAndNow.Interfaces;
 using ThenAndNow.Models.Configuration;
 using ThenAndNow.Models.DTO;
-using ThenAndNow.Models.UI;
 
 namespace ThenAndNow.Components
 {
@@ -57,7 +57,7 @@ namespace ThenAndNow.Components
         #region Private Properties
 
         private bool Loaded { get; set; }
-        private bool DescriptionLoaded { get; set; }
+        private string DirectUrl => $"{AppConfiguration.BaseUrl}{Routes.Entry}?{Routes.EntryIdQueryParamName}={Entry.Id}";
         private bool OriginalPhoto { get; set; }
 
         private Rating Rating { get; set; }
@@ -72,11 +72,10 @@ namespace ThenAndNow.Components
             Rating ??= await RatingService.GetRatingById(Entry.Id);
             RatingEnabled ??= await GetRatingEnabled();
 
-            if (!DescriptionLoaded)
+            if (string.IsNullOrEmpty(Entry.Description))
             {
                 var details = await EntryRepository.GetDetailsById(Entry.Id);
                 Entry.Description = details.Description;
-                DescriptionLoaded = true;
             }
         }
 
@@ -115,7 +114,7 @@ namespace ThenAndNow.Components
                 _ => Labels.Votes56789
             };
 
-            return s += ($"{lastMember})");
+            return s + $"{lastMember})";
         }
 
         private async Task ThumbsDown()

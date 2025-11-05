@@ -49,10 +49,13 @@
 
         #region CardComponent
 
+        public const string AddReply = "Skomentuj jako pierwszy!";
         public const string FigcaptionBase = "Data wykonania zdjęcia: ";
+        public const string HideReplies = "Ukryj komentarze";
         public const string MapIcon = "Pokaż na mapie";
         public const string MoreDetailsIcon = "Pokaż szczegóły";
         public const string Score = "Ocena: ";
+        public const string ShowReplies = "Pokaż komentarze";
         public const string ThumbsDown = "Zagłosuj na nie";
         public const string ThumbsUp = "Zagłosuj na tak";
         public const string Vote = "głos";

@@ -1,12 +1,12 @@
 {
   "rules": {
-    "comments": {
+    "replies": {
       ".read": true,
       ".write": true
     },
-    "details": {
-      ".read": true
-    },
+    //"details": {
+    //  ".read": true
+    //},
     "votes2": {
       ".read": true,
       ".write": true,

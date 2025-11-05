@@ -1,13 +1,21 @@
-﻿<button class="btn btn-outline-info">
-    <a href="@Url" target="_blank" rel="noopener noreferrer">
-        <i class="@Icon"></i> Share
-    </a>
+﻿@using ThenAndNow.Enums
+
+<button class="btn btn-sm btn-social @Name">
+    @if (Type == SocialMediaType.Copy)
+    {
+        if (Copied)
+        {
+            <img alt="@Name" height="@Size" src="@("icons/socials/copied.svg")" width="@Size" />
+        }
+        else
+        {
+            <img alt="@Name" height="@Size" src="@($"icons/socials/{Name}.svg")" width="@Size" @onclick="CopyToClipboard" />
+        }
+    }
+    else
+    {
+        <a href="@(Route + DirectUrl)" rel="noopener noreferrer" target="_blank">
+            <img alt="@Name" height="@Size" src="@($"icons/socials/{Name}.svg")" width="@Size" />
+        </a>
+    }
 </button>
-
-@code {
-    [Parameter]
-    public string Url { get; set; }
-
-    [Parameter]
-    public string Icon { get; set; }
-}

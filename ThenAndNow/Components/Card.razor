@@ -1,4 +1,4 @@
-﻿@using ThenAndNow.Models.UI
+﻿@using ThenAndNow.Enums
 
 <Loader Loaded="Loaded">
     <article class="mb-5">
@@ -25,9 +25,10 @@
                         <img alt="Thumbs down" src="icons/thumbsDown.svg" title="@Labels.ThumbsDown" @onclick="ThumbsDown" />
                     }
                 </div>
-                <Loader Loaded="DescriptionLoaded">
+                @if (!string.IsNullOrEmpty(Entry.Description))
+                {
                     <p>@Entry.Description</p>
-                </Loader>
+                }
                 <div class="d-flex flex-wrap">
                     @foreach (var tag in Entry.Tags)
                     {
@@ -47,6 +48,6 @@
                 <i>@(Labels.FigcaptionBase + GetFigcaption()) </i>
             </figcaption>
         </figure>
-        @* <ShareButtons Id="Entry.Id" /> *@
+        <SocialBox DirectUrl="@DirectUrl" Id="Entry.Id" />
     </article>
 </Loader>

@@ -1,5 +1,5 @@
 ﻿using ThenAndNow.Constants;
-using ThenAndNow.Models;
+using ThenAndNow.Enums;
 
 namespace ThenAndNow.Helpers
 {
@@ -17,8 +17,8 @@ namespace ThenAndNow.Helpers
         public static SortDirection ToSortDirection(this Sorting value)
         {
             return value is Sorting.DateNowAscending or Sorting.TitleAscending or Sorting.IdAscending
-                ? SortDirection.Ascending
-                : SortDirection.Descending;
+                ? SortDirection.Asc
+                : SortDirection.Desc;
         }
 
         public static Sorting ToSorting(string sortBy, string sortDirection)

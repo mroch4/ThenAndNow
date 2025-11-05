@@ -1,5 +1,5 @@
-﻿using ThenAndNow.Interfaces;
-using ThenAndNow.Models;
+﻿using ThenAndNow.Enums;
+using ThenAndNow.Interfaces;
 using ThenAndNow.Models.Database;
 using ThenAndNow.Models.DTO;
 
@@ -11,7 +11,10 @@ namespace ThenAndNow.Repositories
 
         public async Task<Details> GetDetailsById(int entryId)
         {
-            return await firebaseService.GetDetailsById(entryId);
+            //return await firebaseService.GetDetailsById(entryId);
+            await GetDetails();
+
+            return Details.FirstOrDefault(x => x.Id == entryId) ?? new Details();
         }
 
         public async Task<Response<Entry>> GetEntries(Request query)
@@ -82,7 +85,7 @@ namespace ThenAndNow.Repositories
 
         private static IEnumerable<Entry> ApplyOrdering(IEnumerable<Entry> entries, SortBy sortBy, SortDirection sortDirection)
         {
-            var isAscending = sortDirection == SortDirection.Ascending;
+            var isAscending = sortDirection == SortDirection.Asc;
 
             return sortBy switch
             {
@@ -105,9 +108,14 @@ namespace ThenAndNow.Repositories
             };
         }
 
+        private async Task GetDetails()
+        {
+            Details ??= await httpDataCacheService.GetData<Details>(DetailsPath);
+        }
+
         private async Task GetEntries()
         {
-            Entries ??= await httpDataCacheService.GetData<Entry>(JsonPath);
+            Entries ??= await httpDataCacheService.GetData<Entry>(EntriesPath);
         }
 
         private async Task<Coordinates> GetAverageCoordinates()
@@ -173,9 +181,12 @@ namespace ThenAndNow.Repositories
         #endregion
 
         private Entry[] Entries { get; set; }
+        private Details[] Details { get; set; }
 
-        private const string JsonPath = "json/entries.json";
-        //private const string JsonPath = "json/new.json";
-        //private const string JsonPath = "json/stw.json";
+        private const string EntriesPath = "json/entries.json";
+        //private const string EntriesPath = "json/new.json";
+        //private const string EntriesPath = "json/stw.json";
+
+        private const string DetailsPath = "json/details.json";
     }
 }

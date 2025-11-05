@@ -12,24 +12,26 @@
 const database = firebase.database();
 
 window.firebaseInterop = {
+    // Entries
     getDetailsById: async function (refPath) {
         try {
             const snapshot = await database.ref(refPath).once("value");
             const data = snapshot.val();
             return data || { a: null };
         } catch (error) {
-            console.error(`firebaseInterop.getDetailsById error: `, error);
+            console.error("firebaseInterop.getDetailsById error: ", error);
             return { a: null };
         }
     },
 
+    // Rating
     getRatingById: async function (refPath) {
         try {
             const snapshot = await database.ref(refPath).once("value");
             const data = snapshot.val();
             return data || { a: 0, b: 0 };
         } catch (error) {
-            console.error(`firebaseInterop.getRatingById error: `, error);
+            console.error("firebaseInterop.getRatingById error: ", error);
             return { a: 0, b: 0 };
         }
     },
@@ -42,8 +44,31 @@ window.firebaseInterop = {
             });
             return true;
         } catch (error) {
-            console.error(`firebaseInterop.updateRating error: `, error);
+            console.error("firebaseInterop.updateRating error: ", error);
             return false;
+        }
+    },
+
+    // Replies
+    addReply: async function (refPath, reply) {
+        try {
+            const replyRef = push(ref(database, refPath));
+            set(reply);
+            return true;
+        } catch (error) {
+            console.error("firebaseInterop.addReply error: ", error);
+            return false;
+        }
+    },
+
+    getRepliesById: async function (refPath) {
+        try {
+            const snapshot = await database.ref(refPath).once("value");
+            const data = snapshot.val();
+            return data || [];
+        } catch (error) {
+            console.error("firebaseInterop.getRepliesById error: ", error);
+            return [];
         }
     },
 };

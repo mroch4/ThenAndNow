@@ -1,4 +1,5 @@
-﻿using ThenAndNow.Helpers;
+﻿using ThenAndNow.Enums;
+using ThenAndNow.Helpers;
 
 namespace ThenAndNow.Models
 {

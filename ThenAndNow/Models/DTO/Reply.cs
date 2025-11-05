@@ -4,21 +4,22 @@ namespace ThenAndNow.Models.DTO
 {
     public class Reply
     {
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public DateTime Timestamp { get; set; }
-        public string Content { get; set; }
-    }
+        [JsonIgnore]
+        public int EntryId { get; set; }
 
-    public class ParentReply : Reply
-    {
         [JsonPropertyName("a")]
-        public int Id { get; set; }
-        private List<ChildReply> Replies { get; set; }
-    }
+        public long Id { get; set; }
 
-    public class ChildReply : Reply
-    {
+        [JsonIgnore]
+        public DateTime Timestamp => DateTimeOffset.FromUnixTimeMilliseconds(Id).DateTime;
 
+        [JsonPropertyName("b")]
+        public string Name { get; set; }
+
+        [JsonPropertyName("c")]
+        public string Email { get; set; }
+
+        [JsonPropertyName("d")]
+        public string Content { get; set; }
     }
 }

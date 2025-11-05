@@ -3,7 +3,8 @@
 ## Url
 
 https://poznandawniejdzis.pl
-https://poznan-dawniej-dzis.pl/
+
+https://poznan-dawniej-dzis.pl
 
 ## Used libraries
 
@@ -16,6 +17,7 @@ https://poznan-dawniej-dzis.pl/
 1. Q4_2020/Q1_2021 - **static HTML** with minimal JS (hardcoded 10 entries)
 
 2. Q4_2021 - **Angular**(1):
+
    - dynamic data load from JSON to component templates
    - voting using Firebase Realtime Database
    - images depending on screen resolution (three tiers)
@@ -23,21 +25,25 @@ https://poznan-dawniej-dzis.pl/
    - [LinkedIn][def5]
 
 3. Q4_2022 - **Angular**(2):
+
    - UX/UI redesign
    - improved responsiveness
    - _.jpg > _.webp
    - URL: https://poznan-dawniej-dzis.pl/#/
 
 4. Q2_2023 - **React + Typescript**, not released due to:
+
    - lack of state animations
    - missing dependency injection
 
 5. Q4_2024 - **Blazor WASM + Azure Cosmos DB**, not released due to:
+
    - no ability to locally establish connection to Azure database
    - not fully integrated [Leaflet][def4] library for Blazor (non-clickable markers)
    - lack of state animations
 
 6. Q1_2025 - **Angular**(3):
+
    - Angular update 12.2.0 > 19.1.0
    - routing using query params
    - HTML content as labels (language packs for the future)
@@ -70,7 +76,7 @@ https://poznan-dawniej-dzis.pl/
 ## Image dimensions
 
 1. SM - 720px; max screen width: 576px; ratio: 720/576 = 1.25
-2. MD - 1020px; max screen width: 992px; ratio: 1200/992 = 1.21
+2. MD - 1200px; max screen width: 992px; ratio: 1200/992 = 1.21
 3. LG - 1600px
 
 [def]: https://getbootstrap.com/

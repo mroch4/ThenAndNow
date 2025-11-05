@@ -1,4 +1,6 @@
-﻿namespace ThenAndNow.Models.Database
+﻿using ThenAndNow.Enums;
+
+namespace ThenAndNow.Models.Database
 {
     public class Request
     {

@@ -1,4 +1,4 @@
-﻿using ThenAndNow.Models;
+﻿using ThenAndNow.Enums;
 
 namespace ThenAndNow.Constants
 {
@@ -25,6 +25,14 @@ namespace ThenAndNow.Constants
 
         public const string GoogleMapBaseUrl = "http://maps.google.com/maps";
 
+        public const string Facebook = "https://www.facebook.com/sharer/sharer.php?u=";
+        public const string LinkedIn = "https://www.linkedin.com/shareArticle?mini=true&url=";
+        public const string Mailto = "mailto:?body=";
+        public const string Messenger = "fb-messenger://share/?link=";
+        public const string Sms = "sms:?body=";
+        public const string WhatsUp = "https://api.whatsapp.com/send?text=";
+        public const string XTwitter = "https://twitter.com/intent/tweet?url=";
+
         #endregion
 
         #region Query Params
@@ -40,8 +48,8 @@ namespace ThenAndNow.Constants
         public static string SortByTitleQueryParamName = nameof(SortBy.Title).ToLower();
         public static string SortByDateNowQueryParamName = nameof(SortBy.DateNow).ToLower();
 
-        public static string SortingAscQueryParamName = nameof(SortDirection.Ascending).ToLower();
-        public static string SortingDescQueryParamName = nameof(SortDirection.Descending).ToLower();
+        public static string SortingAscQueryParamName = nameof(SortDirection.Asc).ToLower();
+        public static string SortingDescQueryParamName = nameof(SortDirection.Desc).ToLower();
 
         #endregion
     }

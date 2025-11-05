@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using ThenAndNow.Constants;
+using ThenAndNow.Enums;
 using ThenAndNow.Helpers;
 using ThenAndNow.Interfaces;
 using ThenAndNow.Models;

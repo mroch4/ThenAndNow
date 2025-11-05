@@ -1,13 +1,19 @@
 ﻿using ThenAndNow.Interfaces;
-using ThenAndNow.Models.Configuration;
+using ThenAndNow.Models.DTO;
 
 namespace ThenAndNow.Services
 {
-    public class ReplyService(AppConfiguration appConfiguration, IFirebaseService firebaseService) : IReplyService
+    public class ReplyService(IFirebaseService firebaseService) : IReplyService
     {
-        public async Task AddReply(int id)
+        public async Task<Reply> AddReply(Reply reply)
         {
-            await firebaseService.AddReply(id);
+            var result = await firebaseService.AddReply(reply);
+            return result.Reply;
+        }
+
+        public async Task<Reply[]> GetRepliesById(int id)
+        {
+            return await firebaseService.GetRepliesById(id);
         }
     }
 }

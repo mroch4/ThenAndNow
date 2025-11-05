@@ -16,7 +16,7 @@ namespace ThenAndNow.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"LocalStorageService.GetItemAsync error: {ex.Message}");
+                Console.WriteLine($"{nameof(LocalStorageService)}{nameof(GetItem)} error: {ex.Message}");
                 return default;
             }
         }
@@ -30,7 +30,7 @@ namespace ThenAndNow.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"LocalStorageService.SetItemAsync error: {ex.Message}");
+                Console.WriteLine($"{nameof(LocalStorageService)}{nameof(SetItem)} error: {ex.Message}");
             }
         }
     }
