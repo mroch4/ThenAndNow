@@ -9,19 +9,19 @@ namespace ThenAndNow.Models.DTO
         public int Id { get; set; }
 
         [JsonPropertyName("b")]
-        public Coordinates Coordinates { get; set; }
+        public string Title { get; set; }
 
         [JsonPropertyName("c")]
-        public Timestamp Timestamp { get; set; }
+        public Coordinates Coordinates { get; set; }
 
         [JsonPropertyName("d")]
-        public string[] Tags { get; set; }
-
-        [JsonPropertyName("e")]
-        public string Title { get; set; }
+        public Timestamp Timestamp { get; set; }
 
         [JsonIgnore]
         public string Description { get; set; }
+
+        [JsonIgnore]
+        public string[] Tags { get; set; }
     }
 
     public class Coordinates
@@ -52,5 +52,8 @@ namespace ThenAndNow.Models.DTO
 
         [JsonPropertyName("b")]
         public string Description { get; set; }
+
+        [JsonPropertyName("c")]
+        public string[] Tags { get; set; }
     }
 }

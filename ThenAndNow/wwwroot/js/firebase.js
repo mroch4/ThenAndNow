@@ -12,18 +12,6 @@
 const database = firebase.database();
 
 window.firebaseInterop = {
-    // Entries
-    getDetailsById: async function (refPath) {
-        try {
-            const snapshot = await database.ref(refPath).once("value");
-            const data = snapshot.val();
-            return data || { a: null };
-        } catch (error) {
-            console.error("firebaseInterop.getDetailsById error: ", error);
-            return { a: null };
-        }
-    },
-
     // Rating
     getRatingById: async function (refPath) {
         try {
@@ -52,11 +40,10 @@ window.firebaseInterop = {
     // Replies
     addReply: async function (refPath, reply) {
         try {
-            const replyRef = push(ref(database, refPath));
-            set(reply);
+            await database.ref(refPath).push(reply)
             return true;
         } catch (error) {
-            console.error("firebaseInterop.addReply error: ", error);
+            console.error("firebaseInterop.addReply error:", error);
             return false;
         }
     },
@@ -65,7 +52,7 @@ window.firebaseInterop = {
         try {
             const snapshot = await database.ref(refPath).once("value");
             const data = snapshot.val();
-            return data || [];
+            return Object.values(data ?? {});
         } catch (error) {
             console.error("firebaseInterop.getRepliesById error: ", error);
             return [];

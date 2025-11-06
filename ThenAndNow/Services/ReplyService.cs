@@ -5,10 +5,9 @@ namespace ThenAndNow.Services
 {
     public class ReplyService(IFirebaseService firebaseService) : IReplyService
     {
-        public async Task<Reply> AddReply(Reply reply)
+        public async Task<(bool, Reply)> AddReply(Reply reply)
         {
-            var result = await firebaseService.AddReply(reply);
-            return result.Reply;
+            return await firebaseService.AddReply(reply);
         }
 
         public async Task<Reply[]> GetRepliesById(int id)

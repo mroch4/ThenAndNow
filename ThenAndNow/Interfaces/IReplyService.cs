@@ -4,7 +4,7 @@ namespace ThenAndNow.Interfaces
 {
     public interface IReplyService
     {
-        public Task<Reply> AddReply(Reply reply);
+        public Task<(bool Success, Reply Reply)> AddReply(Reply reply);
 
         public Task<Reply[]> GetRepliesById(int id);
     }

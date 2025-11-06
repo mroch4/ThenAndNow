@@ -1,4 +1,5 @@
 ﻿@using System.Globalization
+
 <div class="d-flex flex-column">
     <div class="d-flex justify-content-between align-content-center mb-2">
         <div class="d-flex flex-wrap gap-2">
@@ -9,7 +10,7 @@
         </div>
         <button class="btn btn-sm btn-outline-secondary" @onclick="ToggleReplies">@(ShowReplies? Labels.HideReplies: Labels.ShowReplies)</button>
     </div>
-    <div class="d-flex">
+    <div class="d-flex flex-column">
         @if (ShowReplies)
         {
             @if (Replies.Any())
@@ -18,16 +19,13 @@
                     @foreach (var reply in Replies)
                     {
                         <div class="d-flex flex-column mb-2">
-                            <code>@reply.Name | @reply.Timestamp.ToString("f", new CultureInfo("pl-PL"))</code>
+                            <code>@reply.Name | @reply.Timestamp.ToString("F", new CultureInfo("pl-PL"))</code>
                             <code>@reply.Content</code>
                         </div>
                     }
                 </div>
             }
-            else
-            {
-                <a class="text-center" @onclick="AddReply">@Labels.AddReply</a>
-            }
+            <a class="text-center" @onclick="AddReply">@Labels.AddReply</a>
         }
     </div>
 </div>

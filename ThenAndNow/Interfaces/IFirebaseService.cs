@@ -4,12 +4,6 @@ namespace ThenAndNow.Interfaces
 {
     public interface IFirebaseService
     {
-        #region Entries
-
-        public Task<Details> GetDetailsById(int id);
-
-        #endregion
-
         #region Rating
 
         public Task<Rating> GetRatingById(int id);

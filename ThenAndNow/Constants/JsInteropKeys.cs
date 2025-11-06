@@ -10,12 +10,6 @@
 
         #endregion
 
-        #region Entries
-
-        public const string GetDetailsById = $"{FirebaseInterop}.getDetailsById";
-
-        #endregion
-
         #region Rating
 
         public const string GetRatingById = $"{FirebaseInterop}.getRatingById";

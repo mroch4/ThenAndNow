@@ -8,25 +8,6 @@ namespace ThenAndNow.Services
 {
     public class FirebaseService(AppConfiguration appConfiguration, IJSRuntime jsRuntime) : IFirebaseService, IAsyncDisposable
     {
-        #region Entries
-
-        public async Task<Details> GetDetailsById(int id)
-        {
-            try
-            {
-                var refPath = GetRefPath(appConfiguration.DetailsDb, id);
-                var result = await jsRuntime.InvokeAsync<Details>(JsInteropKeys.GetDetailsById, refPath);
-                return result;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"{nameof(FirebaseService)}.{nameof(GetDetailsById)} error: {ex.Message}");
-                return new Details();
-            }
-        }
-
-        #endregion
-
         #region Rating
 
         public async Task<Rating> GetRatingById(int id)
@@ -111,7 +92,7 @@ namespace ThenAndNow.Services
             {
                 var refPath = GetRefPath(appConfiguration.ReplyDb, id);
                 var result = await jsRuntime.InvokeAsync<Reply[]>(JsInteropKeys.GetRepliesById, refPath);
-                return result.OrderByDescending(x => x.Timestamp).ToArray();
+                return result.OrderBy(x => x.Timestamp).ToArray();
             }
             catch (Exception ex)
             {

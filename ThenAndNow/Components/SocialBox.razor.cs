@@ -32,19 +32,21 @@ namespace ThenAndNow.Components
 
         private async Task AddReply()
         {
-            var reply = new Reply
+            var result = await ReplyService.AddReply(new Reply
             {
                 EntryId = Id,
-                Id = DateTime.Now.Ticks,
+                Id = DateTimeOffset.Now.ToUnixTimeMilliseconds(),
                 Name = Labels.Author,
                 Email = Labels.Email,
-                Content = "Nice one!"
-            };
+                Content = Guid.NewGuid().ToString()
+            });
 
-            //await ReplyService.AddReply(reply);
-
-            ShowReplies = true;
-            StateHasChanged();
+            if (result.Success)
+            {
+                Replies = Replies.Append(result.Reply).ToArray();
+                ShowReplies = true;
+                StateHasChanged();
+            }
         }
 
         private async Task GetReplies()

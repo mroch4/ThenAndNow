@@ -72,10 +72,11 @@ namespace ThenAndNow.Components
             Rating ??= await RatingService.GetRatingById(Entry.Id);
             RatingEnabled ??= await GetRatingEnabled();
 
-            if (string.IsNullOrEmpty(Entry.Description))
+            if (Entry.Description == null)
             {
                 var details = await EntryRepository.GetDetailsById(Entry.Id);
-                Entry.Description = details.Description;
+                Entry.Description = details.Description ?? string.Empty;
+                Entry.Tags = details.Tags ?? [];
             }
         }
 

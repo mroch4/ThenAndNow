@@ -13,17 +13,6 @@
                 }
             </InputSelect>
         </div>
-        @*         <div class="d-flex flex-column">
-            <code>pageSize:</code>
-            <InputSelect TValue="int"
-                         @bind-Value="QueryParams.PageSize" @bind-Value:after="() => NavigationService.Navigate(QueryParams)"
-                         class="form-select form-select-sm">
-                @foreach (var pageSize in PageSizes)
-                {
-                    <option value="@pageSize">@pageSize</option>
-                }
-            </InputSelect>
-        </div> *@
     </div>
 
     @if (!string.IsNullOrEmpty(Tag))
@@ -37,7 +26,7 @@
     }
     
     <Virtualize Context="entry" Items="@Entries.Items" ItemSize="1200" OverscanCount="1">
-        <Card Entry="@entry" />
+        <Card Entry="@entry" @key="entry.Id" />
     </Virtualize>
 
     @if (PagesCount > 1)

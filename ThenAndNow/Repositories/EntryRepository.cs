@@ -5,13 +5,12 @@ using ThenAndNow.Models.DTO;
 
 namespace ThenAndNow.Repositories
 {
-    public class EntryRepository(IFirebaseService firebaseService, IHttpDataCacheService httpDataCacheService) : IEntryRepository
+    public class EntryRepository(IHttpDataCacheService httpDataCacheService) : IEntryRepository
     {
         #region Public methods 
 
         public async Task<Details> GetDetailsById(int entryId)
         {
-            //return await firebaseService.GetDetailsById(entryId);
             await GetDetails();
 
             return Details.FirstOrDefault(x => x.Id == entryId) ?? new Details();
@@ -48,10 +47,12 @@ namespace ThenAndNow.Repositories
 
         public async Task<Coordinates> GetMapCenter()
         {
-            //return await GetAverageCoordinates();
-            //return await GetMiddleEntryCoordinates();
-            //return await GetMiddleSortedCoordinates();
-            return await GetMinMaxCoordinates();
+            await GetEntries();
+
+            //return GetAverageCoordinates();
+            //return GetMiddleEntryCoordinates();
+            //return GetMiddleSortedCoordinates();
+            return GetMinMaxCoordinates();
         }
 
         public async Task<MapEntry[]> GetMapEntries()
@@ -70,7 +71,7 @@ namespace ThenAndNow.Repositories
         {
             await GetEntries();
 
-            var tags = Entries.SelectMany(x => x.Tags).ToList();
+            var tags = Details.SelectMany(x => x.Tags).ToList();
 
             return tags.Distinct().Select(tag => new TagResponse
             {
@@ -115,13 +116,28 @@ namespace ThenAndNow.Repositories
 
         private async Task GetEntries()
         {
-            Entries ??= await httpDataCacheService.GetData<Entry>(EntriesPath);
+            if (Entries != null) return;
+
+            var entries = await httpDataCacheService.GetData<Entry>(EntriesPath);
+
+            if (Details == null) await GetDetails();
+
+            var detailsMap = Details!.ToDictionary(d => d.Id);
+
+            foreach (var entry in entries)
+            {
+                if (detailsMap.TryGetValue(entry.Id, out var detail))
+                {
+                    entry.Description = detail.Description;
+                    entry.Tags = detail.Tags;
+                }
+            }
+
+            Entries = entries;
         }
 
-        private async Task<Coordinates> GetAverageCoordinates()
+        private Coordinates GetAverageCoordinates()
         {
-            await GetEntries();
-
             var coords = Entries.Select(entry => entry.Coordinates).ToList();
 
             return new Coordinates
@@ -131,10 +147,8 @@ namespace ThenAndNow.Repositories
             };
         }
 
-        private async Task<Coordinates> GetMiddleEntryCoordinates()
+        private Coordinates GetMiddleEntryCoordinates()
         {
-            await GetEntries();
-
             var index = Entries.Length / 2;
 
             return new Coordinates
@@ -144,10 +158,8 @@ namespace ThenAndNow.Repositories
             };
         }
 
-        private async Task<Coordinates> GetMiddleSortedCoordinates()
+        private Coordinates GetMiddleSortedCoordinates()
         {
-            await GetEntries();
-
             var index = Entries.Length / 2;
 
             var coords = Entries.Select(entry => entry.Coordinates).ToList();
@@ -162,10 +174,8 @@ namespace ThenAndNow.Repositories
             };
         }
 
-        private async Task<Coordinates> GetMinMaxCoordinates()
+        private Coordinates GetMinMaxCoordinates()
         {
-            await GetEntries();
-
             var coords = Entries.Select(entry => entry.Coordinates).ToList();
 
             var latitudes = coords.Select(x => x.Latitude).ToList();
