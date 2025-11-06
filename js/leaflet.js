@@ -27,7 +27,7 @@
                     dotNetObjectReference.invokeMethodAsync("OnMarkerOpened", entry.a);
                 })
                 .on("popupclose", () => {
-                    this.map.setView([latitude, longitude], this.zoom);
+                    this.map.setView([latitude, longitude], this.map.zoom);
                     dotNetObjectReference.invokeMethodAsync("OnMarkerClosed");
                 })
         );

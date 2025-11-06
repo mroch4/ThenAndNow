@@ -1,15 +1,15 @@
 {
-  "name": "ThenAndNow",
-  "short_name": "ThenAndNow",
+  "name": "Poznań | Dawniej & Dziś",
+  "short_name": "Poznań | Dawniej & Dziś",
   "id": "./",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#03173d",
+  "theme_color": "#212529",
   "prefer_related_applications": false,
   "icons": [
     {
-      "src": "icons/favicon.ico",
+      "src": "favicon.ico",
       "type": "image/x-icon",
       "sizes": "64x64"
     },
@@ -45,6 +45,51 @@
     },
     {
       "src": "icons/thumbsUp.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "icons/socials/copied.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "icons/socials/copy.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "icons/socials/facebook.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "icons/socials/linkedin.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "icons/socials/mailto.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "icons/socials/messanger.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "icons/socials/sms.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "icons/socials/whatsup.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "icons/socials/xtwitter.svg",
       "type": "image/svg+xml",
       "sizes": "any"
     }

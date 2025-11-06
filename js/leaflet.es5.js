@@ -26,7 +26,7 @@ window.leafletMapInterop = {
                 _this.map.setView([entry.b.a, entry.b.b], _this.map.zoom);
                 dotNetObjectReference.invokeMethodAsync("OnMarkerOpened", entry.a);
             }).on("popupclose", function () {
-                _this.map.setView([latitude, longitude], _this.zoom);
+                _this.map.setView([latitude, longitude], _this.map.zoom);
                 dotNetObjectReference.invokeMethodAsync("OnMarkerClosed");
             });
         });
