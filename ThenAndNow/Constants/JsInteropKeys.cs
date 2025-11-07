@@ -10,6 +10,16 @@
 
         #endregion
 
+        #region Auth
+
+        public const string GetCurrentUser = $"{FirebaseInterop}.getCurrentUser";
+        public const string SignInWithEmail = $"{FirebaseInterop}.signInWithEmail";
+        public const string SignInWithFacebook = $"{FirebaseInterop}.signInWithFacebook";
+        public const string SignInWithGoogle = $"{FirebaseInterop}.signInWithGoogle";
+        public const string SignOut = $"{FirebaseInterop}.signOut";
+
+        #endregion
+
         #region Rating
 
         public const string GetRatingById = $"{FirebaseInterop}.getRatingById";

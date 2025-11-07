@@ -24,10 +24,11 @@
             <h5 class="m-0">@Labels.TagsResult "@Tag" (@Entries.Total)</h5>
         </div>
     }
-    
-    <Virtualize Context="entry" Items="@Entries.Items" ItemSize="1200" OverscanCount="1">
+
+    @foreach (var entry in Entries.Items)
+    {
         <Card Entry="@entry" @key="entry.Id" />
-    </Virtualize>
+    }
 
     @if (PagesCount > 1)
     {

@@ -1,13 +1,73 @@
 ﻿using Microsoft.JSInterop;
 using ThenAndNow.Constants;
 using ThenAndNow.Interfaces;
+using ThenAndNow.Models;
 using ThenAndNow.Models.Configuration;
 using ThenAndNow.Models.DTO;
 
 namespace ThenAndNow.Services
 {
-    public class FirebaseService(AppConfiguration appConfiguration, IJSRuntime jsRuntime) : IFirebaseService, IAsyncDisposable
+    public class FirebaseService(
+        AppConfiguration appConfiguration,
+        IJSRuntime jsRuntime) : IFirebaseService, IAsyncDisposable
     {
+        #region Auth
+
+        public async Task<User> GetCurrentUser()
+        {
+            try
+            {
+                return await jsRuntime.InvokeAsync<User>(JsInteropKeys.GetCurrentUser);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{nameof(FirebaseService)}.{nameof(GetCurrentUser)} error: {ex.Message}");
+                return null;
+            }
+        }
+
+        public async Task<User> SignInWithEmail()
+        {
+            return await SignIn(JsInteropKeys.SignInWithEmail);
+        }
+
+        public async Task<User> SignInWithFacebook()
+        {
+            return await SignIn(JsInteropKeys.SignInWithFacebook);
+        }
+
+        public async Task<User> SignInWithGoogle()
+        {
+            return await SignIn(JsInteropKeys.SignInWithGoogle);
+        }
+
+        public async Task SignOut()
+        {
+            try
+            {
+                await jsRuntime.InvokeAsync<User>(JsInteropKeys.SignOut);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{nameof(FirebaseService)}.{nameof(UpdateRating)} error: {ex.Message}");
+            }
+        }
+
+        private async Task<User> SignIn(string functionKey)
+        {
+            try
+            {
+                return await jsRuntime.InvokeAsync<User>(functionKey);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{nameof(FirebaseService)}.{nameof(SignIn)} error: {ex.Message}");
+                return null;
+            }
+        }
+
+        #endregion
+
         #region Rating
 
         public async Task<Rating> GetRatingById(int id)

@@ -1,9 +1,20 @@
-﻿using ThenAndNow.Models.DTO;
+﻿using ThenAndNow.Models;
+using ThenAndNow.Models.DTO;
 
 namespace ThenAndNow.Interfaces
 {
     public interface IFirebaseService
     {
+        #region Auth
+
+        public Task<User> GetCurrentUser();
+        public Task<User> SignInWithEmail();
+        public Task<User> SignInWithFacebook();
+        public Task<User> SignInWithGoogle();
+        public Task SignOut();
+
+        #endregion
+
         #region Rating
 
         public Task<Rating> GetRatingById(int id);

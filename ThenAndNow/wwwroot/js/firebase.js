@@ -12,6 +12,63 @@
 const database = firebase.database();
 
 window.firebaseInterop = {
+    // Auth
+    getCurrentUser: () => {
+        return firebase.auth().currentUser;
+    },
+
+    signIn: async (provider) => {
+        try {
+            const result = await firebase.auth().signInWithPopup(provider);
+            return {
+                name: result.user.displayName,
+                email: result.user.email,
+                token: await result.user.getIdToken()
+            };
+        } catch (error) {
+            console.error("firebaseInterop.signIn error: ", error);
+            return { error: error.message };
+        }
+    },
+
+    signInWithEmail: async (email, password) => {
+        return firebase.auth().signInWithEmailAndPassword(email, password);
+    },
+
+    signInWithFacebook: async () => {
+        const provider = new firebase.auth.FacebookAuthProvider();
+        try {
+            const result = await firebase.auth().signInWithPopup(provider);
+            return {
+                name: result.user.displayName,
+                email: result.user.email,
+                token: await result.user.getIdToken()
+            };
+        } catch (error) {
+            console.error("firebaseInterop.signInWithFacebook error: ", error);
+            return { error: error.message };
+        }
+    },
+
+    signInWithGoogle: async () => {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        try {
+            const result = await firebase.auth().signInWithPopup(provider);
+            return {
+                name: result.user.displayName,
+                email: result.user.email,
+                token: await result.user.getIdToken()
+            };
+        } catch (error) {
+            console.error("firebaseInterop.signInWithGoogle error: ", error);
+            return { error: error.message };
+        }
+    },
+
+    signOut: async () => {
+        await firebase.auth().signOut();
+    },
+
     // Rating
     getRatingById: async function (refPath) {
         try {

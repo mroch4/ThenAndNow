@@ -1,7 +1,7 @@
 ﻿@using System.Globalization
 
 <div class="d-flex flex-column">
-    <div class="d-flex justify-content-between align-content-center mb-2">
+    <div class="d-flex justify-content-between align-content-center mb-3">
         <div class="d-flex flex-wrap gap-2">
             @foreach (var buttonType in SocialButtons)
             {
@@ -19,12 +19,13 @@
                     @foreach (var reply in Replies)
                     {
                         <div class="d-flex flex-column mb-2">
-                            <code>@reply.Name | @reply.Timestamp.ToString("F", new CultureInfo("pl-PL"))</code>
-                            <code>@reply.Content</code>
+                            <span class="text-muted">@reply.Name | @reply.Timestamp.ToString("F", new CultureInfo("pl-PL"))</span>
+                            <span>@reply.Content</span>
                         </div>
                     }
                 </div>
             }
+
             <a class="text-center" @onclick="AddReply">@Labels.AddReply</a>
         }
     </div>

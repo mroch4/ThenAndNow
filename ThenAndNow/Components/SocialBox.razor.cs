@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Components;
-using ThenAndNow.Constants;
 using ThenAndNow.Enums;
 using ThenAndNow.Interfaces;
 using ThenAndNow.Models.DTO;
@@ -21,6 +20,9 @@ namespace ThenAndNow.Components
         #region Dependency Injection
 
         [Inject]
+        private IAuthService AuthService { get; set; }
+
+        [Inject]
         private IReplyService ReplyService { get; set; }
 
         #endregion
@@ -32,20 +34,25 @@ namespace ThenAndNow.Components
 
         private async Task AddReply()
         {
-            var result = await ReplyService.AddReply(new Reply
-            {
-                EntryId = Id,
-                Id = DateTimeOffset.Now.ToUnixTimeMilliseconds(),
-                Name = Labels.Author,
-                Email = Labels.Email,
-                Content = Guid.NewGuid().ToString()
-            });
+            var user = await AuthService.GetCurrentUser();
 
-            if (result.Success)
+            if (user.IsValid)
             {
-                Replies = Replies.Append(result.Reply).ToArray();
-                ShowReplies = true;
-                StateHasChanged();
+                var result = await ReplyService.AddReply(new Reply
+                {
+                    EntryId = Id,
+                    Id = DateTimeOffset.Now.ToUnixTimeMilliseconds(),
+                    Name = user.DisplayName,
+                    Email = user.Email,
+                    Content = Guid.NewGuid().ToString()
+                });
+
+                if (result.Success)
+                {
+                    Replies = Replies.Append(result.Reply).ToArray();
+                    ShowReplies = true;
+                    StateHasChanged();
+                }
             }
         }
 
