@@ -22,47 +22,48 @@
   </head>
 
   <body>
-    <div id="app">
-      <svg class="loading-progress">
-        <circle r="40%" cx="50%" cy="50%" />
-        <circle r="40%" cx="50%" cy="50%" />
-      </svg>
-      <div class="loading-progress-text"></div>
-    </div>
+      <div id="app">
+          <svg class="loading-progress">
+              <circle r="40%" cx="50%" cy="50%" />
+              <circle r="40%" cx="50%" cy="50%" />
+          </svg>
+          <div class="loading-progress-text"></div>
+      </div>
 
-    <div id="blazor-error-ui">
-      An unhandled error has occurred.
-      <a href="" class="reload">Reload</a>
-      <a class="dismiss">🗙</a>
-    </div>
+      <div id="blazor-error-ui">
+          An unhandled error has occurred.
+          <a href="" class="reload">Reload</a>
+          <a class="dismiss">🗙</a>
+      </div>
 
-    <!-- Blazor scripts -->
-    <script src="_framework/blazor.webassembly.js"></script>
-    <script>
-      navigator.serviceWorker.register("js/service-worker.js");
-    </script>
+      <!-- Blazor scripts -->
+      <script src="_framework/blazor.webassembly.js"></script>
+      <script>
+          navigator.serviceWorker.register("js/service-worker.js");
+      </script>
 
-    <!-- Leaflet -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+      <!-- Leaflet -->
+      <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-database-compat.js"></script>
+      <!-- Firebase SDKs -->
+      <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-database-compat.js"></script>
 
-    <!-- Other -->
-    <!--<script src="https://unpkg.com/regenerator-runtime/runtime.js"></script>-->
-    <script src="js/firebase.js"></script>
-    <script src="js/leaflet.es5.min.js"></script>
+      <!-- Other -->
+      <!--<script src="https://unpkg.com/regenerator-runtime/runtime.js"></script>-->
+      <script src="js/firebase.js"></script>
+      <script src="js/leaflet.es5.min.js"></script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZRRG17H7D"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-MZRRG17H7D");
-    </script>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZRRG17H7D"></script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+              dataLayer.push(arguments);
+          }
+          gtag("js", new Date());
+          gtag("config", "G-MZRRG17H7D");
+      </script>
   </body>
 </html>
