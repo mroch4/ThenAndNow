@@ -65,13 +65,13 @@ https://poznan-dawniej-dzis.pl
 6. 2022/04/23 - entries: 21, 22, 27, 30
 7. 2022/12/04 - entries: 23, 24
 8. 2022/12/17 - entries: 28, 29
-9. 2023/08/15 - 3 entries
-10. 2024/01/01 - 7 entries
+9. 2023/08/15 - entries: 31, 32, 33
+10. 2024/05/01 - entries: 34, 35, 36, 37, 38, 39
+11. 2025/03/06 - entry: 40
 
 ## Todos
 
-1. Investigate on lowering the bundle size (Bootstrap styles, ngx-sharebuttons)
-2. Smooth image transition
+1. Smooth image transition
 
 ## Image dimensions
 

@@ -97,8 +97,8 @@ namespace ThenAndNow.Repositories
 
                 SortBy.Title =>
                     isAscending
-                        ? entries.OrderBy(x => x.Title)
-                        : entries.OrderByDescending(x => x.Title),
+                        ? entries.OrderBy(x => x.Title).ThenBy(x => x.Id)
+                        : entries.OrderByDescending(x => x.Title).ThenBy(x => x.Id),
 
                 SortBy.DateNow =>
                     isAscending

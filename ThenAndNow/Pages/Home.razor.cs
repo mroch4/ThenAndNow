@@ -93,6 +93,12 @@ namespace ThenAndNow.Pages
             StateHasChanged();
         }
 
+        private void OnAfterSortingChange()
+        {
+            QueryParams.CurrentPage = 0;
+            NavigationService.Navigate(QueryParams);
+        }
+
         #endregion
     }
 }

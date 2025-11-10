@@ -245,82 +245,76 @@
   },
   {
     "a": 31,
-    "c": [ "" ]
+    "c": [
+      "ulica",
+      "zniszczenia wojenne"
+    ]
   },
   {
     "a": 32,
-    "c": [ "" ]
+    "c": [
+      "bazar",
+      "hotel"
+    ]
   },
   {
     "a": 33,
-    "c": [ "" ]
+    "c": [
+      "bazar",
+      "hotel",
+      "plac", 
+      "zniszczenia wojenne"
+    ]
   },
   {
     "a": 34,
-    "c": [ "" ]
+    "c": [
+      "stary port",
+      "ulica",
+      "zniszczenia wojenne"
+    ]
   },
   {
     "a": 35,
-    "c": [ "" ]
+    "c": [
+      "chwaliszewo",
+      "obiekty sakralne",
+      "powódź"
+    ]
   },
   {
     "a": 36,
-    "c": [ "" ]
+    "c": [
+      "chwaliszewo",
+      "ulica"
+    ]
   },
   {
     "a": 37,
-    "c": [ "" ]
+    "c": [
+      "chwaliszewo",
+      "ulica"
+    ]
   },
   {
     "a": 38,
-    "c": [ "" ]
+    "c": [
+      "chwaliszewo",
+      "ulica"
+    ]
   },
   {
     "a": 39,
-    "c": [ "" ]
+    "c": [
+      "ulica",
+      "winogrady"
+    ]
   },
   {
     "a": 40,
-    "c": [ "" ]
-  },
-  {
-    "a": 41,
-    "c": [ "" ]
-  },
-  {
-    "a": 42,
-    "c": [ "" ]
-  },
-  {
-    "a": 43,
-    "c": [ "" ]
-  },
-  {
-    "a": 44,
-    "c": [ "" ]
-  },
-  {
-    "a": 45,
-    "c": [ "" ]
-  },
-  {
-    "a": 46,
-    "c": [ "" ]
-  },
-  {
-    "a": 47,
-    "c": [ "" ]
-  },
-  {
-    "a": 48,
-    "c": [ "" ]
-  },
-  {
-    "a": 49,
-    "c": [ "" ]
-  },
-  {
-    "a": 50,
-    "c": [ "" ]
+    "c": [
+      "stary browar",
+      "budowa"
+    ]
   }
 ]

@@ -61,6 +61,7 @@ namespace ThenAndNow.Components
         private bool OriginalPhoto { get; set; }
 
         private Rating Rating { get; set; }
+        private string RatingDesc { get; set; }
         private bool? RatingEnabled { get; set; }
 
         #endregion
@@ -70,6 +71,7 @@ namespace ThenAndNow.Components
         private async Task GetDetails()
         {
             Rating ??= await RatingService.GetRatingById(Entry.Id);
+            RatingDesc ??= GetRatingDesc();
             RatingEnabled ??= await GetRatingEnabled();
 
             if (Entry.Description == null)
@@ -90,7 +92,7 @@ namespace ThenAndNow.Components
 
         private string GetImagePath(ImageSize imageSize)
         {
-            return $"photos/{imageSize.ToString().ToLower()}/{Entry.Id}{(OriginalPhoto ? "b" : "a")}.webp";
+            return $"photos/{imageSize.ToString().ToLower()}/{Entry.Id}{(OriginalPhoto ? "a" : "b")}.webp";
         }
 
         private string GetLocation()
@@ -121,12 +123,14 @@ namespace ThenAndNow.Components
         private async Task ThumbsDown()
         {
             Rating = await RatingService.ThumbsDown(Entry.Id);
+            RatingDesc = GetRatingDesc();
             RatingEnabled = await GetRatingEnabled();
         }
 
         private async Task ThumbsUp()
         {
             Rating = await RatingService.ThumbsUp(Entry.Id);
+            RatingDesc = GetRatingDesc();
             RatingEnabled = await GetRatingEnabled();
         }
 
