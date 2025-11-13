@@ -32,31 +32,36 @@ namespace ThenAndNow.Components
 
         #region Private methods
 
-        private async Task ShowModal()
+        private async Task AddReply()
         {
-            var reply = await ReplyService.SetReply(Id);
+            var reply = await AuthReply();
             if (reply != null)
             {
-                await ReplyService.ShowModal();
-
-                ShowReplies = true;
-                StateHasChanged();
+                await ReplyService.ShowModal(reply);
             }
+        }
+
+        private async Task<Reply> AuthReply()
+        {
+            var user = await AuthService.GetCurrentUser();
+
+            return user.IsValid
+                ? new Reply { EntryId = Id, Name = user.DisplayName, Email = user.Email, Content = Guid.NewGuid().ToString() }
+                : null;
         }
 
         private async Task AuthUser()
         {
-            var user = await AuthService.GetCurrentUser();
-        }
-
-        private async Task GetReplies()
-        {
-            Replies ??= await ReplyService.GetRepliesById(Id);
+            var user = await AuthService.SignInWithGoogle();
         }
 
         private async Task ToggleReplies()
         {
-            await GetReplies();
+            if (!ShowReplies)
+            {
+                Replies ??= await ReplyService.GetRepliesById(Id);
+            }
+
             ShowReplies = !ShowReplies;
         }
 

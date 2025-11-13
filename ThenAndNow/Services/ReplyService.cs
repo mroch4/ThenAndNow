@@ -1,7 +1,6 @@
 ﻿using Microsoft.JSInterop;
 using ThenAndNow.Constants;
 using ThenAndNow.Interfaces;
-using ThenAndNow.Models;
 using ThenAndNow.Models.DTO;
 
 namespace ThenAndNow.Services
@@ -10,7 +9,7 @@ namespace ThenAndNow.Services
         IJSRuntime jsRuntime,
         IFirebaseService firebaseService) : IReplyService
     {
-        public Reply Reply { get; set; } = new();
+        public Reply Reply { get; set; }
 
         public async Task<(bool, Reply)> AddReply()
         {
@@ -23,24 +22,14 @@ namespace ThenAndNow.Services
             return await firebaseService.GetRepliesById(id);
         }
 
-        public async Task<Reply> SetReply(int id)
+        public async Task ShowModal(Reply reply)
         {
-            //user ??= await authService.GetCurrentUser();
-            var user = new User { DisplayName = Labels.Author, Email = Labels.Email };
+            Reply = reply;
+            OnChange?.Invoke();
 
-            Reply = new Reply { EntryId = id };
-
-            if (!user.IsValid) return null;
-
-            Reply.Name = user.DisplayName;
-            Reply.Email = user.Email;
-
-            return Reply;
+            await jsRuntime.InvokeVoidAsync(JsInteropKeys.ShowModal, Constants.Constants.ReplyModalId);
         }
 
-        public async Task ShowModal()
-        {
-            await jsRuntime.InvokeVoidAsync("bootstrapInterop.showModal", Constants.Constants.ReplyModalId);
-        }
+        public event Action OnChange;
     }
 }

@@ -1,15 +1,15 @@
-﻿<div class="modal fade" id="@Constants.ReplyModalId" tabindex="-1" aria-labelledby="textModalLabel" aria-hidden="true">
+﻿<div aria-hidden="true" aria-labelledby="textModalLabel" class="modal fade" id="@Constants.ReplyModalId" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content gap-3 p-3 ">
             <div class="d-flex justify-content-end">
                 <button class="btn-close" data-bs-dismiss="modal" @onclick="Reset" type="button"></button>
             </div>
             <div class="d-flex flex-column gap-2">
-                <input @bind="Reply.Name" class="form-control" disabled="disabled" />
-                <textarea @bind="Reply.Content" class="form-control" rows="5"></textarea>
+                <InputText @bind-Value="Reply.Name" class="form-control" disabled="disabled" />
+                <InputTextArea @bind-Value="Reply.Content" class="form-control" rows="5" maxlength="@MaxContentLength"></InputTextArea>
             </div>
             <div class="d-flex justify-content-end">
-                <button class="btn btn-outline-secondary" data-bs-dismiss="modal" @onclick="AddReply">Add</button>
+                <button class="btn btn-light" data-bs-dismiss="modal" disabled="@Disabled" @onclick="AddReply">@Labels.AddReply</button>
             </div>
         </div>
     </div>

@@ -2,17 +2,15 @@
 
 <Loader Loaded="Entries != null" NoData="Entries == null || Entries?.Total == 0">
 
-    <div class="d-flex justify-content-end w-100 my-2 gap-3">
-        <div class="d-flex flex-column">
-            <InputSelect TValue="Sorting"
-                         @bind-Value="QueryParams.Sorting" @bind-Value:after="OnAfterSortingChange"
-                         class="form-select form-select-sm">
-                @foreach (var option in SortingOptions)
-                {
-                    <option value="@(option.Value)">@option.Label</option>
-                }
-            </InputSelect>
-        </div>
+    <div class="d-flex justify-content-end mb-3">
+        <InputSelect TValue="Sorting"
+                     @bind-Value="QueryParams.Sorting" @bind-Value:after="OnAfterSortingChange"
+                     class="d-flex form-select form-select-sm w-auto">
+            @foreach (var option in SortingOptions)
+            {
+                <option value="@(option.Value)">@option.Label</option>
+            }
+        </InputSelect>
     </div>
 
     @if (!string.IsNullOrEmpty(Tag))

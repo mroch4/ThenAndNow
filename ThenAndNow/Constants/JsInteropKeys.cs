@@ -2,6 +2,22 @@
 {
     public static class JsInteropKeys
     {
+        #region Auth
+
+        public const string GetCurrentUser = $"{FirebaseInterop}.getCurrentUser";
+        public const string SignInWithGoogle = $"{FirebaseInterop}.signInWithGoogle";
+        public const string SignOut = $"{FirebaseInterop}.signOut";
+
+        #endregion
+
+        #region Bootstrap
+
+        public const string ShowModal = $"{BootstrapInterop}.showModal";
+
+        private const string BootstrapInterop = $"bootstrap{Interop}";
+
+        #endregion
+
         #region Leaflet Map
 
         public const string InitMap = $"{LeafletMapInterop}.init";
@@ -10,11 +26,12 @@
 
         #endregion
 
-        #region Auth
+        #region Local Storage
 
-        public const string GetCurrentUser = $"{FirebaseInterop}.getCurrentUser";
-        public const string SignInWithGoogle = $"{FirebaseInterop}.signInWithGoogle";
-        public const string SignOut = $"{FirebaseInterop}.signOut";
+        public const string GetItem = $"{LocalStorage}.getItem";
+        public const string SetItem = $"{LocalStorage}.setItem";
+
+        private const string LocalStorage = "localStorage";
 
         #endregion
 
@@ -29,15 +46,6 @@
 
         public const string AddReply = $"{FirebaseInterop}.addReply";
         public const string GetRepliesById = $"{FirebaseInterop}.getRepliesById";
-
-        #endregion
-
-        #region Local Storage
-
-        public const string GetItem = $"{LocalStorage}.getItem";
-        public const string SetItem = $"{LocalStorage}.setItem";
-
-        private const string LocalStorage = "localStorage";
 
         #endregion
 

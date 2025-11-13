@@ -160,6 +160,10 @@ p {
     }
 }
 
+.btn-light {
+    border-color: var(--bs-btn-hover-bg);
+}
+
 .btn-social {
     width: 60px;
     padding-top: 2px;
