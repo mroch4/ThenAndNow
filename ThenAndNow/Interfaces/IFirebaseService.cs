@@ -8,8 +8,6 @@ namespace ThenAndNow.Interfaces
         #region Auth
 
         public Task<User> GetCurrentUser();
-        public Task<User> SignInWithEmail();
-        public Task<User> SignInWithFacebook();
         public Task<User> SignInWithGoogle();
         public Task SignOut();
 

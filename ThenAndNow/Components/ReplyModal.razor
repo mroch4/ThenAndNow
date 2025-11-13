@@ -1,0 +1,16 @@
+﻿<div class="modal fade" id="@Constants.ReplyModalId" tabindex="-1" aria-labelledby="textModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content gap-3 p-3 ">
+            <div class="d-flex justify-content-end">
+                <button class="btn-close" data-bs-dismiss="modal" @onclick="Reset" type="button"></button>
+            </div>
+            <div class="d-flex flex-column gap-2">
+                <input @bind="Reply.Name" class="form-control" disabled="disabled" />
+                <textarea @bind="Reply.Content" class="form-control" rows="5"></textarea>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-outline-secondary" data-bs-dismiss="modal" @onclick="AddReply">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

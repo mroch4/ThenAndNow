@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using ThenAndNow.Constants;
 using ThenAndNow.Enums;
 using ThenAndNow.Helpers;
@@ -38,6 +39,9 @@ namespace ThenAndNow.Pages
 
         [Inject]
         private INavigationService NavigationService { get; set; }
+
+        [Inject]
+        private IJSRuntime JsRuntime { get; set; }
 
         #endregion
 
@@ -91,6 +95,7 @@ namespace ThenAndNow.Pages
             }
 
             StateHasChanged();
+            await JsRuntime.InvokeVoidAsync(JsInteropKeys.ScrollTop, new { top = 0, behavior = "smooth" });
         }
 
         private void OnAfterSortingChange()

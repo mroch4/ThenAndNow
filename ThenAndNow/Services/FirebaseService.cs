@@ -26,16 +26,6 @@ namespace ThenAndNow.Services
             }
         }
 
-        public async Task<User> SignInWithEmail()
-        {
-            return await SignIn(JsInteropKeys.SignInWithEmail);
-        }
-
-        public async Task<User> SignInWithFacebook()
-        {
-            return await SignIn(JsInteropKeys.SignInWithFacebook);
-        }
-
         public async Task<User> SignInWithGoogle()
         {
             return await SignIn(JsInteropKeys.SignInWithGoogle);

@@ -13,16 +13,6 @@ namespace ThenAndNow.Services
             return User;
         }
 
-        public async Task<User> SignInWithEmail()
-        {
-            return await firebaseService.SignInWithEmail();
-        }
-
-        public async Task<User> SignInWithFacebook()
-        {
-            return await firebaseService.SignInWithFacebook();
-        }
-
         public async Task<User> SignInWithGoogle()
         {
             return await firebaseService.SignInWithGoogle();

@@ -8,7 +8,6 @@
 
         public bool IsValid =>
             !string.IsNullOrEmpty(DisplayName) &&
-            !string.IsNullOrEmpty(Email) &&
-            !string.IsNullOrEmpty(Token);
+            !string.IsNullOrEmpty(Email);
     }
 }

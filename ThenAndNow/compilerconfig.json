@@ -6,5 +6,9 @@
   {
     "outputFile": "wwwroot/js/leaflet.es5.js",
     "inputFile": "wwwroot/js/leaflet.js"
+  },
+  {
+    "outputFile": "wwwroot/js/bootstrapInterop.es5.js",
+    "inputFile": "wwwroot/js/bootstrapInterop.js"
   }
 ]
