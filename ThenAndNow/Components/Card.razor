@@ -38,12 +38,19 @@
             </div>
         }
         <figure class="text-center mt-3">
-            <picture>
-                <source media="(max-width: 576px)" srcset="@GetImagePath(ImageSize.Sm)" />
-                <source media="(max-width: 992px)" srcset="@GetImagePath(ImageSize.Md)" />
-                <img alt="@Entry.Title" loading="lazy" src="@GetImagePath(ImageSize.Lg)"
-                     @onclick="@(() => { OriginalPhoto = !OriginalPhoto; })" />
-            </picture>
+            <div class="image-container">
+                <picture class="image-layer @(OriginalPhoto ? "visible" : "hidden")">
+                    <source media="(max-width: 576px)" srcset="@GetImagePath(ImageSize.Sm, true)" />
+                    <source media="(max-width: 992px)" srcset="@GetImagePath(ImageSize.Md, true)" />
+                    <img alt="@Entry.Title" loading="lazy" src="@GetImagePath(ImageSize.Lg, true)" />
+                </picture>
+                <picture class="image-layer @(OriginalPhoto ? "hidden" : "visible")">
+                    <source media="(max-width: 576px)" srcset="@GetImagePath(ImageSize.Sm, false)" />
+                    <source media="(max-width: 992px)" srcset="@GetImagePath(ImageSize.Md, false)" />
+                    <img alt="@Entry.Title" loading="lazy" src="@GetImagePath(ImageSize.Lg, false)" />
+                </picture>
+                <div class="image-toggle-overlay" @onclick="@(() => { OriginalPhoto = !OriginalPhoto; })"></div>
+            </div>
             <figcaption>
                 <i>@(Labels.FigcaptionBase + GetFigcaption()) </i>
             </figcaption>

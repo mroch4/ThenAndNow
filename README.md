@@ -71,7 +71,10 @@ https://poznan-dawniej-dzis.pl
 
 ## Todos
 
-1. Smooth image transition
+1. Add general mode switch
+2. Style comments box
+3. Auth user using Firebase
+4. GitHub Security alert: Firebase API key (?)
 
 ## Image dimensions
 

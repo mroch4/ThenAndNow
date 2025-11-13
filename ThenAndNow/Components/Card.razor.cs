@@ -90,9 +90,10 @@ namespace ThenAndNow.Components
             //: Entry.Timestamp.Now.ToString("f", CultureInfo.GetCultureInfo("pl-PL"));
         }
 
-        private string GetImagePath(ImageSize imageSize)
+        private string GetImagePath(ImageSize imageSize, bool isOriginal = false)
         {
-            return $"photos/{imageSize.ToString().ToLower()}/{Entry.Id}{(OriginalPhoto ? "a" : "b")}.webp";
+            var suffix = isOriginal ? "a" : "b";
+            return $"photos/{imageSize.ToString().ToLower()}/{Entry.Id}{suffix}.webp";
         }
 
         private string GetLocation()
