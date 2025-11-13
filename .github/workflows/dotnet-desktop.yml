@@ -22,6 +22,9 @@ jobs:
       - name: Publish
         run: dotnet publish -c Release -o publish
 
+      - name: Add CNAME file
+        run: echo "www.poznan-dawniej-dzis.pl" > publish/wwwroot/CNAME
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
