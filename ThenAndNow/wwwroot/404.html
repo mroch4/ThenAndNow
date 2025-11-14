@@ -16,8 +16,12 @@
     <link rel="manifest" href="manifest.webmanifest" />
 
     <!--styles-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" rel="stylesheet">
+
+    <link crossorigin="anonymous" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" rel="stylesheet" />
+
     <link rel="stylesheet" href="css/app.min.css" />
 </head>
 
@@ -36,22 +40,27 @@
         <a class="dismiss">🗙</a>
     </div>
 
+    <!--<script type="module" src="js/firebase_module.js"></script>-->
     <!-- Blazor scripts -->
     <script src="_framework/blazor.webassembly.js"></script>
     <script>
         navigator.serviceWorker.register("js/service-worker.js");
     </script>
 
-    <!-- Leaflet -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Libraries -->
+    <script crossorigin="anonymous" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script crossorigin="anonymous" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.5.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.5.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.5.0/firebase-database-compat.js"></script>
 
     <!-- Other -->
-    <!--<script src="https://unpkg.com/regenerator-runtime/runtime.js"></script>-->
+    <script src="js/bootstrapInterop.es5.min.js"></script>
     <script src="js/firebase.js"></script>
     <script src="js/leaflet.es5.min.js"></script>
 
