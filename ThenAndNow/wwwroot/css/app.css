@@ -207,6 +207,11 @@ p {
 .btn-social.sms {
   background-color: #20c16c;
 }
+@media only screen and (orientation: landscape) {
+  .btn-social.sms {
+    display: none;
+  }
+}
 .btn-social.copy {
   background-color: #6c757d;
 }
