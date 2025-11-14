@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "ThenAndNow",
   "resources": {
-    "hash": "sha256-w1vdN6ykTZXoA0BWSIBPgbNagyFKC77Ro5jS6IZ5ngo=",
+    "hash": "sha256-IVmDioqwDT3EnnqnPgRHcGJvQYBuo5ZO4zGWvUqX+yY=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.a292041w4p.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Forms.uyuitmimef.wasm": "Microsoft.AspNetCore.Components.Forms.wasm",
@@ -47,7 +47,7 @@
       "System.Threading.5j2dbunw49.wasm": "System.Threading.wasm",
       "System.t4d4s3f398.wasm": "System.wasm",
       "System.Private.CoreLib.75nh7tp6g7.wasm": "System.Private.CoreLib.wasm",
-      "ThenAndNow.yz1ozv9yvt.wasm": "ThenAndNow.wasm",
+      "ThenAndNow.2t7983c2a7.wasm": "ThenAndNow.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.native.noby4tlk4d.js": "dotnet.native.js",
       "dotnet.native.qe75a9vfqn.wasm": "dotnet.native.wasm",
@@ -113,7 +113,7 @@
       "System.Text.RegularExpressions.k8ibga7wut.wasm": "sha256-7OYvLuFLvwbax++2u+uoDmoaX8o/Q8wcYJC92eP1YjA=",
       "System.Threading.5j2dbunw49.wasm": "sha256-EeGM7ygAh4ofzhzD4najJcOc0g3Sz1mCTQkx8UbM4DY=",
       "System.t4d4s3f398.wasm": "sha256-fVP2BxRRKpBA0PmBbKxmO45bXDrAXVn1GthlDclLbeU=",
-      "ThenAndNow.yz1ozv9yvt.wasm": "sha256-Hg/re3KpkSd2kj7RFAQiOj+VW+Q2t8OnDws+awzNz2I="
+      "ThenAndNow.2t7983c2a7.wasm": "sha256-xsP6EuXjU7wt/iBcVeVBpw0Vdy6q0RJOWmTTMFLSC3Y="
     }
   },
   "cacheBootResources": true,
