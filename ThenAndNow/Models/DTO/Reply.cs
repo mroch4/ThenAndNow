@@ -1,25 +1,20 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Globalization;
+using System.Text.Json.Serialization;
 
 namespace ThenAndNow.Models.DTO
 {
-    public class Reply
+    public class Reply : ReplyDTO
     {
         [JsonIgnore]
         public int EntryId { get; set; }
 
-        [JsonPropertyName("a")]
-        public long Id { get; set; }
-
         [JsonIgnore]
         public DateTime Timestamp => DateTimeOffset.FromUnixTimeMilliseconds(Id).DateTime;
 
-        [JsonPropertyName("b")]
-        public string Name { get; set; }
+        [JsonIgnore]
+        public string TimestampString => Timestamp.ToString("F", new CultureInfo("pl-PL"));
 
-        [JsonPropertyName("c")]
-        public string Email { get; set; }
-
-        [JsonPropertyName("d")]
-        public string Content { get; set; }
+        [JsonIgnore]
+        public string Initial => Name[0].ToString();
     }
 }

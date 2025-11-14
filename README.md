@@ -71,9 +71,8 @@ https://poznan-dawniej-dzis.pl
 
 ## Todos
 
-1. Style comments box
-2. Auth user using Firebase
-3. \*GitHub Security alert: Firebase API key (?)
+1. Auth user using Firebase
+2. \*GitHub Security alert: Firebase API key (?)
 
 ## Image dimensions
 

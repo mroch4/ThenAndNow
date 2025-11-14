@@ -2,12 +2,15 @@
 
 namespace ThenAndNow.Models.DTO
 {
-    public class Entry : EntryDTO
+    public class Details
     {
-        [JsonIgnore]
+        [JsonPropertyName("a")]
+        public int Id { get; set; }
+
+        [JsonPropertyName("b")]
         public string Description { get; set; }
 
-        [JsonIgnore]
+        [JsonPropertyName("c")]
         public string[] Tags { get; set; }
     }
 }

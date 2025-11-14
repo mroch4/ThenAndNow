@@ -60,31 +60,6 @@
   content: var(--blazor-load-percentage-text, "Loading");
 }
 
-a, li, img, .pointer {
-  cursor: pointer;
-}
-
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 9999;
-}
-nav a {
-  color: #fff !important;
-  font-weight: 500;
-  text-decoration: none;
-}
-nav a:not(:last-child) {
-  margin-right: 1rem;
-}
-
-figure img {
-  max-height: 90vh;
-  max-width: 100%;
-  border-radius: 0.64rem;
-}
-
 .image-container {
   position: relative;
   display: inline-block;
@@ -127,6 +102,40 @@ figure img {
   z-index: 10;
 }
 
+.btn:active, .btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-light {
+  border-color: var(--bs-btn-hover-bg);
+}
+
+a, li, img, .pointer {
+  cursor: pointer;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+nav a {
+  color: #fff !important;
+  font-weight: 500;
+  text-decoration: none;
+}
+nav a:not(:last-child) {
+  margin-right: 1rem;
+}
+
+figure img {
+  max-height: 90vh;
+  max-width: 100%;
+  border-radius: 0.64rem;
+}
+
 main {
   margin-top: 5rem;
   min-height: calc(100vh - 5rem - 40px);
@@ -149,46 +158,20 @@ p {
   text-indent: 1em;
 }
 
-.current-page-index {
-  font-weight: 700;
-  pointer-events: none;
-}
-
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tag {
-  background-color: #999;
-  border-radius: 0.25rem;
-  color: white;
-  cursor: pointer;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  padding: 0.25rem 0.5rem;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.leaflet-container {
-  margin-bottom: 1rem;
-  border-radius: 0.64rem;
-}
-
 #map {
   width: 100%;
   height: 50vh;
 }
 
-.btn:active, .btn:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.btn-light {
-  border-color: var(--bs-btn-hover-bg);
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 0.85rem;
+  height: 2rem;
+  width: 2rem;
 }
 
 .btn-social {
@@ -223,4 +206,32 @@ p {
 }
 .btn-social.mailto {
   background-color: #6c757d;
+}
+
+.current-page-index {
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag {
+  background-color: #999;
+  border-radius: 0.25rem;
+  color: white;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.leaflet-container {
+  margin-bottom: 1rem;
+  border-radius: 0.64rem;
 }

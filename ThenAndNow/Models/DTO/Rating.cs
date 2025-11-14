@@ -2,15 +2,9 @@
 
 namespace ThenAndNow.Models.DTO
 {
-    public class Rating
+    public class Rating : RatingDTO
     {
         [JsonIgnore]
         public int Id { get; set; }
-
-        [JsonPropertyName("a")]
-        public int Score { get; set; }
-
-        [JsonPropertyName("b")]
-        public int Total { get; set; }
     }
 }

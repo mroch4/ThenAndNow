@@ -6,7 +6,7 @@ using ThenAndNow.Models.DTO;
 namespace ThenAndNow.Pages
 {
     [Route(Routes.Entry)]
-    public partial class Single
+    public partial class EntryComponent
     {
         #region Parameters
 

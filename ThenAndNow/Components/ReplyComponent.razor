@@ -1,0 +1,11 @@
+﻿<section class="d-flex align-items-start gap-2 mb-3">
+    <div class="d-flex flex-center col-1 mt-2 avatar" style="background-color: @($"#{Reply.Color}")">@Reply.Initial</div>
+    <section class="d-flex flex-column gap-1">
+        <section class="d-flex flex-column flex-sm-row gap-1">
+            <span class="fw-bold">@Reply.Name</span>
+            <span class="d-flex d-none d-sm-flex text-muted">|</span>
+            <span class="text-muted">@Reply.TimestampString</span>
+        </section>
+        <span style="word-break: break-all">@Reply.Content</span>
+    </section>
+</section>
