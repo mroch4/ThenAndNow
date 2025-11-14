@@ -64,7 +64,7 @@ namespace ThenAndNow.Pages
 
         private int PagesCount { get; set; }
 
-        public static readonly int[] PageSizes = [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 30];
+        private bool OriginalPhotoFirst { get; set; }
 
         public static (Sorting Value, string Label)[] SortingOptions =
         [

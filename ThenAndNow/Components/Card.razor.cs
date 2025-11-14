@@ -18,6 +18,9 @@ namespace ThenAndNow.Components
         [Parameter]
         public bool ShowDetails { get; set; }
 
+        [Parameter]
+        public bool OriginalPhotoFirst { get; set; }
+
         #endregion
 
         #region Dependency Injection
@@ -42,7 +45,7 @@ namespace ThenAndNow.Components
         {
             await base.OnInitializedAsync();
 
-            OriginalPhoto = AppConfiguration.DefaultOriginalPhoto;
+            OriginalPhoto = OriginalPhotoFirst;
 
             if (ShowDetails)
             {
@@ -50,6 +53,13 @@ namespace ThenAndNow.Components
             }
 
             Loaded = true;
+        }
+
+        protected override void OnParametersSet()
+        {
+            base.OnParametersSet();
+
+            OriginalPhoto = OriginalPhotoFirst;
         }
 
         #endregion

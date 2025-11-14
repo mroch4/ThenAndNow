@@ -2,7 +2,12 @@
 
 <Loader Loaded="Entries != null" NoData="Entries == null || Entries?.Total == 0">
 
-    <div class="d-flex justify-content-end mb-3">
+    <div class="d-flex flex-sm-row flex-column justify-content-between gap-2 mb-3">
+        <div class="form-check">
+            <input @bind="OriginalPhotoFirst" @bind:after="StateHasChanged" class="form-check-input" type="checkbox">
+            <label class="form-check-label">@Labels.OriginalPhotoFirst</label>
+        </div>
+
         <InputSelect TValue="Sorting"
                      @bind-Value="QueryParams.Sorting" @bind-Value:after="OnAfterSortingChange"
                      class="d-flex form-select form-select-sm w-auto">
@@ -23,10 +28,9 @@
         </div>
     }
 
-    @foreach (var entry in Entries.Items)
-    {
-        <Card Entry="@entry" @key="entry.Id" />
-    }
+    <Virtualize Context="entry" Items="@Entries.Items" ItemSize="1200">
+        <Card Entry="@entry" @key="entry.Id" OriginalPhotoFirst="@OriginalPhotoFirst" />
+    </Virtualize>
 
     @if (PagesCount > 1)
     {

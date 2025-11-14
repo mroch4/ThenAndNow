@@ -1,20 +1,17 @@
-﻿@if (Loaded)
+﻿@if (NoData)
+{
+    <div class="d-flex flex-column">
+        <span>@Labels.NoData</span>
+        <a class="my-3" @onclick="() => NavigationService.Navigate(new QueryParams())">&lt; @Labels.NavigateToHomepage</a>
+    </div>
+}
+else if (Loaded)
 {
     @ChildContent
 }
 else
 {
-    @if (NoData)
-    {
-        <div class="d-flex flex-column">
-            <span>@Labels.NoData</span>
-            <a class="my-3" @onclick="() => NavigationService.Navigate(new QueryParams())">&lt; @Labels.NavigateToHomepage</a>
-        </div>
-    }
-    else
-    {
-        <div class="d-flex align-items-center justify-content-center">
-            <p class="fst-italic text-secondary">@Labels.Loading</p>
-        </div>
-    }
+    <div class="d-flex align-items-center justify-content-center">
+        <p class="fst-italic text-secondary">@Labels.Loading</p>
+    </div>
 }

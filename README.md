@@ -71,10 +71,9 @@ https://poznan-dawniej-dzis.pl
 
 ## Todos
 
-1. Add general mode switch
-2. Style comments box
-3. Auth user using Firebase
-4. GitHub Security alert: Firebase API key (?)
+1. Style comments box
+2. Auth user using Firebase
+3. \*GitHub Security alert: Firebase API key (?)
 
 ## Image dimensions
 

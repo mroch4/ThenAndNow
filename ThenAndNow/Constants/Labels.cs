@@ -95,6 +95,7 @@
 
         public const string Loading = "Ładowanie...";
         public const string NotFound = "Niestety, nie udało znaleźć się strony pod tym adresem.";
+        public const string OriginalPhotoFirst = "Oryginalne zdjęcie jako pierwsze";
         public const string PageTitle = "Poznań | Dawniej & Dziś";
         public const string TagsResult = "Rezultaty wyszukiwania dla tagu: ";
     }
