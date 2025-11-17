@@ -1,4 +1,13 @@
-﻿window.leafletMapInterop = {
+﻿window.bootstrapInterop = {
+    showModal: function (selector) {
+        var modal = new bootstrap.Modal(document.getElementById(selector));
+        if (modal) {
+            modal.show();
+        }
+    }
+};
+
+window.leafletMapInterop = {
     zoom: 13,
 
     init: function (latitude, longitude, entries, dotNetObjectReference) {
