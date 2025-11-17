@@ -1,6 +1,19 @@
-﻿window.bootstrapInterop = {
-    showModal: function (selector) {
-        var modal = new bootstrap.Modal(document.getElementById(selector));
+﻿window.blazorInterop = {
+    scrollTo: function (elementId) {
+        const element = document.getElementById(elementId);
+        if (element && element.parentElement) {
+            parentElement.scrollIntoView(true);
+        }
+    },
+
+    scrollTop: function (elementId) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+};
+
+window.bootstrapInterop = {
+    showModal: function (elementId) {
+        const modal = new bootstrap.Modal(document.getElementById(elementId));
         if (modal) {
             modal.show();
         }

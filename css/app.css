@@ -108,7 +108,10 @@
 }
 
 .btn-light {
-  border-color: var(--bs-btn-hover-bg);
+  border-color: var(--bs-secondary-border-subtle);
+}
+.btn-light:active, .btn-light:focus, .btn-light:hover {
+  background-color: var(--bs-secondary-border-subtle);
 }
 
 a, li, img, .pointer {
