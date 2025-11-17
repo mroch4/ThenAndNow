@@ -40,6 +40,8 @@ namespace ThenAndNow.Components
             var reply = await AuthReply();
             if (reply != null)
             {
+                ReplyService.OnReplyAdded += OnReplyAdded;
+
                 await ReplyService.ShowModal(reply);
             }
         }
@@ -68,6 +70,10 @@ namespace ThenAndNow.Components
             };
         }
 
+        private async Task AuthUser()
+        {
+            var user = await AuthService.SignInWithGoogle();
+        }
 
         private static string GetRandomColour()
         {
@@ -75,9 +81,15 @@ namespace ThenAndNow.Components
             return Colours[random.Next(Colours.Length)];
         }
 
-        private async Task AuthUser()
+        private void OnReplyAdded()
         {
-            var user = await AuthService.SignInWithGoogle();
+            Replies = Replies == null
+                ? [ReplyService.Reply]
+                : Replies.Append(ReplyService.Reply).ToArray();
+
+            StateHasChanged();
+
+            ReplyService.OnReplyAdded -= OnReplyAdded;
         }
 
         private async Task ToggleReplies()

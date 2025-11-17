@@ -14,8 +14,7 @@ https://poznan-dawniej-dzis.pl
 ## Todos
 
 1. Auth user using Firebase
-2. Display added reply
-3. \*GitHub Security alert: Firebase API key (?)
+2. \*GitHub Security alert: Firebase API key (?)
 
 ## Release history
 

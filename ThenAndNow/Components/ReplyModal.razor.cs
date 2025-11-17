@@ -20,13 +20,13 @@ namespace ThenAndNow.Components
 
         protected override Task OnInitializedAsync()
         {
-            ReplyService.OnChange += StateHasChanged;
+            ReplyService.OnReplyChanged += StateHasChanged;
             return Task.CompletedTask;
         }
 
         public void Dispose()
         {
-            ReplyService.OnChange -= StateHasChanged;
+            ReplyService.OnReplyChanged -= StateHasChanged;
         }
 
         #endregion

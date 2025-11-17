@@ -25,7 +25,7 @@ namespace ThenAndNow.Interfaces
 
         #region Replies
 
-        public Task<(bool Success, Reply Reply)> AddReply(Reply reply);
+        public Task<bool> AddReply(Reply reply);
 
         public Task<Reply[]> GetRepliesById(int id);
 

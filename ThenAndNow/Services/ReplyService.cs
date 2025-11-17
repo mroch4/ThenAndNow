@@ -5,16 +5,19 @@ using ThenAndNow.Models.DTO;
 
 namespace ThenAndNow.Services
 {
-    public class ReplyService(
-        IJSRuntime jsRuntime,
-        IFirebaseService firebaseService) : IReplyService
+    public class ReplyService(IJSRuntime jsRuntime, IFirebaseService firebaseService) : IReplyService
     {
         public Reply Reply { get; set; }
 
-        public async Task<(bool, Reply)> AddReply()
+        public async Task AddReply()
         {
             Reply.Id = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-            return await firebaseService.AddReply(Reply);
+
+            var result = await firebaseService.AddReply(Reply);
+            if (result)
+            {
+                OnReplyAdded?.Invoke();
+            }
         }
 
         public async Task<Reply[]> GetRepliesById(int id)
@@ -25,11 +28,12 @@ namespace ThenAndNow.Services
         public async Task ShowModal(Reply reply)
         {
             Reply = reply;
-            OnChange?.Invoke();
+            OnReplyChanged?.Invoke();
 
             await jsRuntime.InvokeVoidAsync(JsInteropKeys.ShowModal, Constants.Constants.ReplyModalId);
         }
 
-        public event Action OnChange;
+        public event Action OnReplyAdded;
+        public event Action OnReplyChanged;
     }
 }

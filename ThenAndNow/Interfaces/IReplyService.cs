@@ -6,10 +6,11 @@ namespace ThenAndNow.Interfaces
     {
         public Reply Reply { get; set; }
 
-        public Task<(bool Success, Reply Reply)> AddReply();
+        public Task AddReply();
         public Task<Reply[]> GetRepliesById(int id);
         public Task ShowModal(Reply reply);
 
-        public event Action OnChange;
+        public event Action OnReplyAdded;
+        public event Action OnReplyChanged;
     }
 }

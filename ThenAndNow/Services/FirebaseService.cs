@@ -7,9 +7,7 @@ using ThenAndNow.Models.DTO;
 
 namespace ThenAndNow.Services
 {
-    public class FirebaseService(
-        AppConfiguration appConfiguration,
-        IJSRuntime jsRuntime) : IFirebaseService, IAsyncDisposable
+    public class FirebaseService(AppConfiguration appConfiguration, IJSRuntime jsRuntime) : IFirebaseService, IAsyncDisposable
     {
         #region Auth
 
@@ -121,18 +119,17 @@ namespace ThenAndNow.Services
 
         #region Replies
 
-        public async Task<(bool, Reply)> AddReply(Reply reply)
+        public async Task<bool> AddReply(Reply reply)
         {
             try
             {
                 var refPath = GetRefPath(appConfiguration.ReplyDb, reply.EntryId);
-                var result = await jsRuntime.InvokeAsync<bool>(JsInteropKeys.AddReply, refPath, reply);
-                return (result, reply);
+                return await jsRuntime.InvokeAsync<bool>(JsInteropKeys.AddReply, refPath, reply);
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"{nameof(FirebaseService)}.{nameof(AddReply)} error: {ex.Message}");
-                return (false, reply);
+                return false;
             }
         }
 
