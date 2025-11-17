@@ -52,7 +52,7 @@ namespace ThenAndNow.Components
                 await GetDetails();
             }
 
-            Loaded = true;
+            DataLoaded = true;
         }
 
         protected override void OnParametersSet()
@@ -66,7 +66,7 @@ namespace ThenAndNow.Components
 
         #region Private Properties
 
-        private bool Loaded { get; set; }
+        private bool DataLoaded { get; set; }
         private string DirectUrl => $"{AppConfiguration.BaseUrl}{Routes.Entry}?{Routes.EntryIdQueryParamName}={Entry.Id}";
         private bool OriginalPhoto { get; set; }
 

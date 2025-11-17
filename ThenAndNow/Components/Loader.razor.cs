@@ -9,10 +9,10 @@ namespace ThenAndNow.Components
         public RenderFragment ChildContent { get; set; }
 
         [Parameter]
-        public bool Loaded { get; set; }
+        public bool DataLoaded { get; set; }
 
         [Parameter]
-        public bool NoData { get; set; }
+        public bool NotFound { get; set; }
 
         [Inject]
         private INavigationService NavigationService { get; set; }

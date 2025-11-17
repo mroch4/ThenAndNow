@@ -1,6 +1,6 @@
 ﻿@using ThenAndNow.Enums
 
-<Loader Loaded="Loaded">
+<Loader DataLoaded="DataLoaded">
     <article class="mb-5">
         <section class="header">
             <header class="d-flex align-items-center justify-content-between">
@@ -37,24 +37,26 @@
                 </div>
             </div>
         }
-        <figure class="text-center mt-3">
-            <div class="image-container">
-                <picture class="image-layer @(OriginalPhoto ? "visible" : "hidden")">
-                    <source media="(max-width: 576px)" srcset="@GetImagePath(ImageSize.Sm, true)" />
-                    <source media="(max-width: 992px)" srcset="@GetImagePath(ImageSize.Md, true)" />
-                    <img alt="@Entry.Title" loading="lazy" src="@GetImagePath(ImageSize.Lg, true)" />
-                </picture>
-                <picture class="image-layer @(OriginalPhoto ? "hidden" : "visible")">
-                    <source media="(max-width: 576px)" srcset="@GetImagePath(ImageSize.Sm, false)" />
-                    <source media="(max-width: 992px)" srcset="@GetImagePath(ImageSize.Md, false)" />
-                    <img alt="@Entry.Title" loading="lazy" src="@GetImagePath(ImageSize.Lg, false)" />
-                </picture>
-                <div class="image-toggle-overlay" @onclick="@(() => { OriginalPhoto = !OriginalPhoto; })"></div>
-            </div>
-            <figcaption>
-                <i>@(Labels.FigcaptionBase + GetFigcaption()) </i>
-            </figcaption>
-        </figure>
+        <Loader DataLoaded="true">
+            <figure class="text-center mt-3">
+                <div class="image-container">
+                    <picture class="image-layer @(OriginalPhoto ? "visible" : "hidden")">
+                        <source media="(max-width: 576px)" srcset="@GetImagePath(ImageSize.Sm, true)" />
+                        <source media="(max-width: 992px)" srcset="@GetImagePath(ImageSize.Md, true)" />
+                        <img alt="@Entry.Title" loading="lazy" src="@GetImagePath(ImageSize.Lg, true)" />
+                    </picture>
+                    <picture class="image-layer @(OriginalPhoto ? "hidden" : "visible")">
+                        <source media="(max-width: 576px)" srcset="@GetImagePath(ImageSize.Sm)" />
+                        <source media="(max-width: 992px)" srcset="@GetImagePath(ImageSize.Md)" />
+                        <img alt="@Entry.Title" loading="lazy" src="@GetImagePath(ImageSize.Lg)" />
+                    </picture>
+                    <div class="image-toggle-overlay" @onclick="@(() => { OriginalPhoto = !OriginalPhoto; })"></div>
+                </div>
+                <figcaption>
+                    <i>@(Labels.FigcaptionBase + GetFigcaption()) </i>
+                </figcaption>
+            </figure>
+        </Loader>
         <SocialBox DirectUrl="@DirectUrl" Id="Entry.Id" />
     </article>
 </Loader>

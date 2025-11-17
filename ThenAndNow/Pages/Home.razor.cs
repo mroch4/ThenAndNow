@@ -58,7 +58,8 @@ namespace ThenAndNow.Pages
 
         #endregion
 
-        private Response<Entry> Entries { get; set; } = new() { Items = [], Total = 0 };
+        private Response<Entry> Entries { get; set; }
+        private bool DataLoaded { get; set; }
 
         private QueryParams QueryParams { get; set; }
 
@@ -66,7 +67,7 @@ namespace ThenAndNow.Pages
 
         private bool OriginalPhotoFirst { get; set; }
 
-        public static (Sorting Value, string Label)[] SortingOptions =
+        private static readonly (Sorting Value, string Label)[] SortingOptions =
         [
             (Sorting.IdDescending, Labels.IdDescending),
             (Sorting.IdAscending, Labels.IdAscending),
@@ -80,6 +81,8 @@ namespace ThenAndNow.Pages
 
         private async Task LoadEntries()
         {
+            DataLoaded = false;
+
             var dbQuery = RequestHelper.GetDatabaseQuery(QueryParams);
             var response = await EntryRepository.GetEntries(dbQuery);
 
@@ -93,6 +96,8 @@ namespace ThenAndNow.Pages
                 Entries = response;
                 PagesCount = response.Total.GetPagesCount(dbQuery.Take);
             }
+
+            DataLoaded = true;
 
             StateHasChanged();
             await JsRuntime.InvokeVoidAsync(JsInteropKeys.ScrollTop, new { top = 0, behavior = "smooth" });

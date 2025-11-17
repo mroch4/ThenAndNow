@@ -6,7 +6,7 @@ using ThenAndNow.Models.Database;
 namespace ThenAndNow.Pages
 {
     [Route(Routes.Tags)]
-    public partial class Tags
+    public partial class TagsComponent
     {
         #region Dependency Injection
 
@@ -22,12 +22,14 @@ namespace ThenAndNow.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            TagsArray = await EntryRepository.GetTags();
+            Tags = await EntryRepository.GetTags();
+            DataLoaded = true;
         }
 
         #endregion
 
-        private TagResponse[] TagsArray { get; set; }
+        private TagResponse[] Tags { get; set; }
+        private bool DataLoaded { get; set; }
 
         private static double GetFontSize(int count)
         {

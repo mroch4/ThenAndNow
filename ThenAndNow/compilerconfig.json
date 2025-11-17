@@ -4,11 +4,7 @@
     "inputFile": "wwwroot/css/app.scss"
   },
   {
-    "outputFile": "wwwroot/js/leaflet.es5.js",
-    "inputFile": "wwwroot/js/leaflet.js"
-  },
-  {
-    "outputFile": "wwwroot/js/bootstrapInterop.es5.js",
-    "inputFile": "wwwroot/js/bootstrapInterop.js"
+    "outputFile": "wwwroot/js/app.es5.js",
+    "inputFile": "wwwroot/js/app.js"
   }
 ]

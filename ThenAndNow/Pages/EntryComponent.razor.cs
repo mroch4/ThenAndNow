@@ -32,10 +32,12 @@ namespace ThenAndNow.Pages
             await base.OnInitializedAsync();
 
             Item = await EntryRepository.GetEntryById(int.TryParse(IdString, out var id) ? id : 0);
+            DataLoaded = true;
         }
 
         #endregion
 
         private Entry Item { get; set; }
+        private bool DataLoaded { get; set; }
     }
 }

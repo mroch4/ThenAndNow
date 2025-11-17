@@ -10,7 +10,12 @@ https://poznan-dawniej-dzis.pl
 
 1. [Bootstrap][def]
 2. [Leaflet][def2]
-3. [ngx-sharebuttons][def3]
+
+## Todos
+
+1. Auth user using Firebase
+2. Display added reply
+3. \*GitHub Security alert: Firebase API key (?)
 
 ## Release history
 
@@ -69,12 +74,7 @@ https://poznan-dawniej-dzis.pl
 10. 2024/05/01 - entries: 34, 35, 36, 37, 38, 39
 11. 2025/03/06 - entry: 40
 
-## Todos
-
-1. Auth user using Firebase
-2. \*GitHub Security alert: Firebase API key (?)
-
-## Image dimensions
+## Photos dimensions
 
 1. SM - 720px; max screen width: 576px; ratio: 720/576 = 1.25
 2. MD - 1200px; max screen width: 992px; ratio: 1200/992 = 1.21
@@ -82,6 +82,5 @@ https://poznan-dawniej-dzis.pl
 
 [def]: https://getbootstrap.com/
 [def2]: https://github.com/Leaflet/Leaflet
-[def3]: https://github.com/murhafsousli/ngx-sharebuttons
 [def4]: https://github.com/ichim/LeafletForBlazor-NuGet
 [def5]: https://www.linkedin.com/posts/marcin-rochowski-68443921b_pozna%C5%84-dawniej-dzi%C5%9B-activity-6862803538507030528-0EOT?utm_source=share&utm_medium=member_desktop

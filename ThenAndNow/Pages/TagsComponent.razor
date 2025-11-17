@@ -1,6 +1,6 @@
-﻿<Loader Loaded="TagsArray != null">
+﻿<Loader DataLoaded="DataLoaded" NotFound="Tags is null or { Length: 0 }">
     <div class="flex-center flex-wrap">
-        @foreach (var item in TagsArray)
+        @foreach (var item in Tags)
         {
             <span class="pointer m-2"
                   @onclick="() => NavigationService.Navigate(new QueryParams { Tag = item.Tag })"
