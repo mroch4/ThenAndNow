@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using ThenAndNow.Enums;
 using ThenAndNow.Interfaces;
 using ThenAndNow.Models.DTO;
@@ -23,6 +24,9 @@ namespace ThenAndNow.Components
         private IAuthService AuthService { get; set; }
 
         [Inject]
+        private IJSRuntime JsRuntime { get; set; }
+
+        [Inject]
         private ILocalStorageService LocalStorageService { get; set; }
 
         [Inject]
@@ -32,6 +36,7 @@ namespace ThenAndNow.Components
 
         private bool ShowReplies { get; set; }
         private Reply[] Replies { get; set; }
+        private bool DataLoaded => ShowReplies && Replies != null;
 
         #region Private methods
 
@@ -81,13 +86,17 @@ namespace ThenAndNow.Components
             return Colours[random.Next(Colours.Length)];
         }
 
-        private void OnReplyAdded()
+        private async void OnReplyAdded()
         {
+            var reply = ReplyService.Reply;
+
             Replies = Replies == null
-                ? [ReplyService.Reply]
-                : Replies.Append(ReplyService.Reply).ToArray();
+                ? [reply]
+                : Replies.Append(reply).ToArray();
 
             StateHasChanged();
+
+            //await JsRuntime.InvokeVoidAsync(JsInteropKeys.ScrollTo, reply.Id);
 
             ReplyService.OnReplyAdded -= OnReplyAdded;
         }
@@ -96,10 +105,13 @@ namespace ThenAndNow.Components
         {
             if (!ShowReplies)
             {
+                ShowReplies = true;
                 Replies ??= await ReplyService.GetRepliesById(Id);
             }
-
-            ShowReplies = !ShowReplies;
+            else
+            {
+                ShowReplies = false;
+            }
         }
 
         #endregion

@@ -138,7 +138,13 @@ $media-breakpoint-sm: 576px;
 }
 
 .btn-light {
-    border-color: var(--bs-btn-hover-bg);
+    border-color: var(--bs-secondary-border-subtle);
+
+    &:active,
+    &:focus,
+    &:hover {
+        background-color: var(--bs-secondary-border-subtle);
+    }
 }
 
 // custom

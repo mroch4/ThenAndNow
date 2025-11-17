@@ -28,7 +28,7 @@
     }
 
     <Virtualize Context="entry" Items="@Entries.Items" ItemSize="1200">
-        <Card Entry="@entry" @key="entry.Id" OriginalPhotoFirst="@OriginalPhotoFirst"/>
+        <Card Entry="entry" @key="entry.Id" OriginalPhotoFirst="@OriginalPhotoFirst" />
     </Virtualize>
 
     @if (PagesCount > 1)

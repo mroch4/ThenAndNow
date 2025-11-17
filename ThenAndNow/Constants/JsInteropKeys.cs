@@ -49,7 +49,8 @@
 
         #endregion
 
-        public const string ScrollTop = "window.scrollTo";
+        public const string ScrollTo = $"window.blazor{Interop}.scrollTo";
+        public const string ScrollTop = $"window.blazor{Interop}.scrollTop";
 
         private const string FirebaseInterop = $"firebase{Interop}";
 

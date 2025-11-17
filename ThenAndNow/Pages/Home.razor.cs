@@ -100,7 +100,7 @@ namespace ThenAndNow.Pages
             DataLoaded = true;
 
             StateHasChanged();
-            await JsRuntime.InvokeVoidAsync(JsInteropKeys.ScrollTop, new { top = 0, behavior = "smooth" });
+            await JsRuntime.InvokeVoidAsync(JsInteropKeys.ScrollTop);
         }
 
         private void OnAfterSortingChange()

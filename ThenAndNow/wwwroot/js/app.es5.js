@@ -1,8 +1,21 @@
 ﻿"use strict";
 
+window.blazorInterop = {
+    scrollTo: function scrollTo(elementId) {
+        var element = document.getElementById(elementId);
+        if (element && element.parentElement) {
+            parentElement.scrollIntoView(true);
+        }
+    },
+
+    scrollTop: function scrollTop(elementId) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+};
+
 window.bootstrapInterop = {
-    showModal: function showModal(selector) {
-        var modal = new bootstrap.Modal(document.getElementById(selector));
+    showModal: function showModal(elementId) {
+        var modal = new bootstrap.Modal(document.getElementById(elementId));
         if (modal) {
             modal.show();
         }
