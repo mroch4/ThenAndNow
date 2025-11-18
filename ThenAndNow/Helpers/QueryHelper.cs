@@ -8,12 +8,12 @@ namespace ThenAndNow.Helpers
     {
         public static int GetCurrentPage(this string value)
         {
-            return int.TryParse(value, out var currentPage) ? currentPage : 0;
+            return int.TryParse(value, out var currentPage) && currentPage >= 0 ? currentPage : 0;
         }
 
         public static int GetPageSize(this string value)
         {
-            return int.TryParse(value, out var pageSize) ? pageSize : Constants.Constants.DefaultPageSize;
+            return int.TryParse(value, out var pageSize) && pageSize >= 0 ? pageSize : Constants.Constants.DefaultPageSize;
         }
 
         public static string ToQueryString(this QueryParams queryParams)

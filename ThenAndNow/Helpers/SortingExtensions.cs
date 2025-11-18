@@ -23,32 +23,32 @@ namespace ThenAndNow.Helpers
 
         public static Sorting ToSorting(string sortBy, string sortDirection)
         {
-            if (sortBy == Routes.SortByDateNowQueryParamName &&
-                sortDirection == Routes.SortingDescQueryParamName)
+            if (string.Equals(sortBy, Routes.SortByDateNowQueryParamName, StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(sortDirection, Routes.SortingDescQueryParamName, StringComparison.OrdinalIgnoreCase))
             {
                 return Sorting.DateNowDescending;
             }
 
-            if (sortBy == Routes.SortByDateNowQueryParamName &&
-                sortDirection == Routes.SortingAscQueryParamName)
+            if (string.Equals(sortBy, Routes.SortByDateNowQueryParamName, StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(sortDirection, Routes.SortingAscQueryParamName, StringComparison.OrdinalIgnoreCase))
             {
                 return Sorting.DateNowAscending;
             }
 
-            if (sortBy == Routes.SortByTitleQueryParamName &&
-                sortDirection == Routes.SortingDescQueryParamName)
+            if (string.Equals(sortBy, Routes.SortByTitleQueryParamName, StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(sortDirection, Routes.SortingDescQueryParamName, StringComparison.OrdinalIgnoreCase))
             {
                 return Sorting.TitleDescending;
             }
 
-            if (sortBy == Routes.SortByTitleQueryParamName &&
-                sortDirection == Routes.SortingAscQueryParamName)
+            if (string.Equals(sortBy, Routes.SortByTitleQueryParamName, StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(sortDirection, Routes.SortingAscQueryParamName, StringComparison.OrdinalIgnoreCase))
             {
                 return Sorting.TitleAscending;
             }
 
-            if (sortBy == Routes.SortByIdQueryParamName &&
-                sortDirection == Routes.SortingAscQueryParamName)
+            if (string.Equals(sortBy, Routes.SortByIdQueryParamName, StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(sortDirection, Routes.SortingAscQueryParamName, StringComparison.OrdinalIgnoreCase))
             {
                 return Sorting.IdAscending;
             }
