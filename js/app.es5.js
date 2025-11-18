@@ -3,8 +3,15 @@
 window.blazorInterop = {
     scrollTo: function scrollTo(elementId) {
         var element = document.getElementById(elementId);
-        if (element && element.parentElement) {
-            parentElement.scrollIntoView(true);
+        if (element) {
+            var _parent = element.parentElement;
+            if (_parent) {
+                var scrollPos = element.offsetTop - element.offsetHeight;
+                _parent.scrollTo({
+                    top: scrollPos,
+                    behavior: "smooth"
+                });
+            }
         }
     },
 
