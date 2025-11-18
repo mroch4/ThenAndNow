@@ -3,10 +3,10 @@
     authDomain: "poznandawniejdzis-79c46.firebaseapp.com",
     databaseURL: "https://poznandawniejdzis-79c46-default-rtdb.firebaseio.com",
     projectId: "poznandawniejdzis-79c46",
-    storageBucket: "poznandawniejdzis-79c46.appspot.com",
+    storageBucket: "poznandawniejdzis-79c46.firebasestorage.app",
     messagingSenderId: "1033991145858",
     appId: "1:1033991145858:web:28d914c9b8fc24ef88679b",
-    measurementId: "G-MZRRG17H7D",
+    measurementId: "G-MZRRG17H7D"
 });
 
 const database = firebase.database();
