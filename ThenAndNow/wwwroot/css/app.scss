@@ -131,19 +131,22 @@ $media-breakpoint-sm: 576px;
 
 .btn {
     &:active,
-    &:focus {
+    &:focus, 
+    &:hover {
         outline: none;
         box-shadow: none;
     }
 }
 
 .btn-light {
+    background-color: var(--bs-secondary-border-subtle);
     border-color: var(--bs-secondary-border-subtle);
 
     &:active,
     &:focus,
     &:hover {
         background-color: var(--bs-secondary-border-subtle);
+        border-color: var(--bs-secondary-border-subtle);
     }
 }
 
@@ -233,8 +236,9 @@ p {
         background-color: #20c16c;
     }
 
-    &.copy {
-        background-color: #6c757d;
+    &.copy, 
+    &.mailto {
+        background-color: var(--bs-secondary-border-subtle);
     }
 
     &.xtwitter {
@@ -243,10 +247,6 @@ p {
 
     &.linkedin {
         background-color: #0077b5;
-    }
-
-    &.mailto {
-        background-color: #6c757d;
     }
 }
 

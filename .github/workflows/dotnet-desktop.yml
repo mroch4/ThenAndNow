@@ -22,6 +22,9 @@ jobs:
       - name: Publish
         run: dotnet publish -c Release -o publish
 
+      - name: Create 404.html
+        run: cp publish/wwwroot/index.html publish/wwwroot/404.html
+
       - name: Add CNAME file
         run: echo "www.poznan-dawniej-dzis.pl" > publish/wwwroot/CNAME
 

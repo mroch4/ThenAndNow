@@ -50,6 +50,7 @@
         #region CardComponent
 
         public const string AddReply = "Skomentuj";
+        public const string AddFirstReply = "Skomentuj jako pierwszy!";
         public const string FigcaptionBase = "Data wykonania zdjęcia: ";
         public const string HideReplies = "Ukryj komentarze";
         public const string MapIcon = "Pokaż na mapie";

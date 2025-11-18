@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using ThenAndNow.Constants;
 using ThenAndNow.Enums;
 using ThenAndNow.Interfaces;
 using ThenAndNow.Models.DTO;
@@ -96,7 +97,7 @@ namespace ThenAndNow.Components
 
             StateHasChanged();
 
-            //await JsRuntime.InvokeVoidAsync(JsInteropKeys.ScrollTo, reply.Id);
+            await JsRuntime.InvokeVoidAsync(JsInteropKeys.ScrollTo, reply.Id);
 
             ReplyService.OnReplyAdded -= OnReplyAdded;
         }
