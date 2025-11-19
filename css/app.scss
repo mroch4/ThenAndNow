@@ -131,23 +131,18 @@ $media-breakpoint-sm: 576px;
 
 .btn {
     &:active,
-    &:focus, 
+    &:focus,
     &:hover {
         outline: none;
         box-shadow: none;
     }
 }
 
-.btn-light {
-    background-color: var(--bs-secondary-border-subtle);
-    border-color: var(--bs-secondary-border-subtle);
-
-    &:active,
-    &:focus,
-    &:hover {
-        background-color: var(--bs-secondary-border-subtle);
-        border-color: var(--bs-secondary-border-subtle);
-    }
+.btn-dark {
+    --bs-btn-bg: var(--bs-gray-700);
+    --bs-btn-border-color: var(--bs-gray-700);
+    --bs-btn-disabled-bg: var(--bs-gray-500);
+    --bs-btn-disabled-border-color: var(--bs-gray-500);
 }
 
 // custom
@@ -236,7 +231,7 @@ p {
         background-color: #20c16c;
     }
 
-    &.copy, 
+    &.copy,
     &.mailto {
         background-color: var(--bs-secondary-border-subtle);
     }

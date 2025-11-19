@@ -8,11 +8,11 @@
   "theme_color": "#212529",
   "prefer_related_applications": false,
   "icons": [
-    {
-      "src": "favicon.ico",
-      "type": "image/x-icon",
-      "sizes": "64x64"
-    },
+    //{
+    //  "src": "favicon.ico",
+    //  "type": "image/x-icon",
+    //  "sizes": "64x64"
+    //},
     {
       "src": "icons/cancel.svg",
       "type": "image/svg+xml",

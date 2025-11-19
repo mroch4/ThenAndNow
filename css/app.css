@@ -107,13 +107,11 @@
   box-shadow: none;
 }
 
-.btn-light {
-  background-color: var(--bs-secondary-border-subtle);
-  border-color: var(--bs-secondary-border-subtle);
-}
-.btn-light:active, .btn-light:focus, .btn-light:hover {
-  background-color: var(--bs-secondary-border-subtle);
-  border-color: var(--bs-secondary-border-subtle);
+.btn-dark {
+  --bs-btn-bg: var(--bs-gray-700);
+  --bs-btn-border-color: var(--bs-gray-700);
+  --bs-btn-disabled-bg: var(--bs-gray-500);
+  --bs-btn-disabled-border-color: var(--bs-gray-500);
 }
 
 a, li, img, .pointer {
