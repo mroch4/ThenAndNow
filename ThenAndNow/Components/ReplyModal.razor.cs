@@ -43,6 +43,13 @@ namespace ThenAndNow.Components
             ReplyService.Reply.Content = null;
         }
 
+        private void OnContentInput(ChangeEventArgs e)
+        {
+            var content = e.Value?.ToString() ?? string.Empty;
+            ReplyService.Reply.Content = content;
+            StateHasChanged();
+        }
+
         #region Private members
 
         private bool Disabled => string.IsNullOrEmpty(Reply.Content) || Reply.Content.Length > MaxContentLength;

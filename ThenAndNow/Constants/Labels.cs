@@ -49,14 +49,10 @@
 
         #region CardComponent
 
-        public const string AddReply = "Skomentuj";
-        public const string AddFirstReply = "Skomentuj jako pierwszy!";
         public const string FigcaptionBase = "Data wykonania zdjęcia: ";
-        public const string HideReplies = "Ukryj komentarze";
         public const string MapIcon = "Pokaż na mapie";
         public const string MoreDetailsIcon = "Pokaż szczegóły";
         public const string Score = "Ocena: ";
-        public const string ShowReplies = "Pokaż komentarze";
         public const string ThumbsDown = "Zagłosuj na nie";
         public const string ThumbsUp = "Zagłosuj na tak";
         public const string Vote = "głos";
@@ -69,6 +65,19 @@
 
         public const string NavigateToHomepage = "Powrót do strony głównej";
         public const string NoData = "Brak wyników spełniających kryteria wyszukiwania.";
+
+        #endregion
+
+        #region SocialBox
+
+        public const string AddReply = "Dodaj komentarz";
+        public const string AddFirstReply = "Dodaj pierwszy komentarz!";
+        public const string HideReplies = "Ukryj komentarze";
+        public const string MaxContentLength = "Maksymalna liczba znaków: ";
+        public const string ShowReplies = "Pokaż komentarze";
+        public const string ReplyAuthor = "Autor";
+        public const string ReplyContent = "Treść komentarza...";
+        public const string Submit = "Wyślij";
 
         #endregion
 

@@ -12,6 +12,7 @@ namespace ThenAndNow.Services
         {
             //User ??= await firebaseService.SignInWithGoogle();
             User ??= new User { DisplayName = Labels.Author, Email = Labels.Email };
+            //User ??= new User();
             return User;
         }
 

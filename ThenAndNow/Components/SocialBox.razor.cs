@@ -39,6 +39,11 @@ namespace ThenAndNow.Components
         private Reply[] Replies { get; set; }
         private bool DataLoaded => ShowReplies && Replies != null;
 
+        private bool ReplyBox => Replies is { Length: > 3 };
+        private static string ReplyBoxClassBase => "d-flex flex-column gap-3 p-3 mb-2";
+        private string ReplyBoxClass => ReplyBox ? $"{ReplyBoxClassBase} border border-secondary-subtle" : ReplyBoxClassBase;
+        private string ReplyBoxStyle => ReplyBox ? "max-height: 300px; overflow-y: auto;" : string.Empty;
+
         #region Private methods
 
         private async Task AddReply()
@@ -71,7 +76,6 @@ namespace ThenAndNow.Components
                 EntryId = Id,
                 Name = user.DisplayName,
                 Email = user.Email,
-                Content = Guid.NewGuid().ToString(),
                 Color = colour
             };
         }
