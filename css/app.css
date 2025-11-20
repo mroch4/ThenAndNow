@@ -102,16 +102,20 @@
   z-index: 10;
 }
 
+h6 {
+  margin: 0;
+}
+
 .btn:active, .btn:focus, .btn:hover {
   outline: none;
   box-shadow: none;
 }
 
 .btn-dark {
-  --bs-btn-bg: var(--bs-gray-700);
-  --bs-btn-border-color: var(--bs-gray-700);
-  --bs-btn-disabled-bg: var(--bs-gray-500);
-  --bs-btn-disabled-border-color: var(--bs-gray-500);
+  --bs-btn-bg: var(--bs-gray-600);
+  --bs-btn-border-color: var(--bs-gray-600);
+  --bs-btn-disabled-bg: var(--bs-gray-400);
+  --bs-btn-disabled-border-color: var(--bs-gray-400);
 }
 
 a, li, img, .pointer {
@@ -184,6 +188,12 @@ p {
 .btn-social.facebook {
   background-color: #4267b2;
 }
+.btn-social.flickr {
+  background-color: #0063dc;
+}
+.btn-social.github {
+  background-color: black;
+}
 .btn-social.messenger {
   background-color: #168aff;
 }
@@ -193,13 +203,13 @@ p {
 .btn-social.sms {
   background-color: #20c16c;
 }
-@media only screen and (orientation: landscape) {
+@media only screen and (orientation: landscape), only screen and (min-width: 500px) {
   .btn-social.sms {
     display: none;
   }
 }
 .btn-social.copy, .btn-social.mailto {
-  background-color: var(--bs-secondary-border-subtle);
+  background-color: var(--bs-gray-600);
 }
 .btn-social.xtwitter {
   background-color: #000000;

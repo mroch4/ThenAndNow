@@ -3,7 +3,7 @@ $media-breakpoint-xsm: 360px;
 $media-breakpoint-sm: 576px;
 
 @mixin hide-on-desktop() {
-    @media only screen and (orientation: landscape) {
+    @media only screen and (orientation: landscape), only screen and (min-width: 500px) {
         display: none;
     }
 }
@@ -129,6 +129,10 @@ $media-breakpoint-sm: 576px;
 
 // boostrap overrides
 
+h6 {
+    margin: 0;
+}
+
 .btn {
     &:active,
     &:focus,
@@ -139,10 +143,10 @@ $media-breakpoint-sm: 576px;
 }
 
 .btn-dark {
-    --bs-btn-bg: var(--bs-gray-700);
-    --bs-btn-border-color: var(--bs-gray-700);
-    --bs-btn-disabled-bg: var(--bs-gray-500);
-    --bs-btn-disabled-border-color: var(--bs-gray-500);
+    --bs-btn-bg: var(--bs-gray-600);
+    --bs-btn-border-color: var(--bs-gray-600);
+    --bs-btn-disabled-bg: var(--bs-gray-400);
+    --bs-btn-disabled-border-color: var(--bs-gray-400);
 }
 
 // custom
@@ -218,6 +222,14 @@ p {
         background-color: #4267b2;
     }
 
+    &.flickr {
+        background-color: #0063dc;
+    }
+
+    &.github {
+        background-color: black;
+    }
+
     &.messenger {
         background-color: #168aff;
     }
@@ -233,7 +245,7 @@ p {
 
     &.copy,
     &.mailto {
-        background-color: var(--bs-secondary-border-subtle);
+        background-color: var(--bs-gray-600);
     }
 
     &.xtwitter {
