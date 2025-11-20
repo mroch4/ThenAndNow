@@ -9,9 +9,6 @@ namespace ThenAndNow.Components
         #region Dependency Injection
 
         [Inject]
-        private IAuthService AuthService { get; set; }
-
-        [Inject]
         private IReplyService ReplyService { get; set; }
 
         #endregion

@@ -38,14 +38,24 @@ namespace ThenAndNow.Pages
         private IEntryRepository EntryRepository { get; set; }
 
         [Inject]
+        private IJSRuntime JsRuntime { get; set; }
+
+        [Inject]
         private INavigationService NavigationService { get; set; }
 
         [Inject]
-        private IJSRuntime JsRuntime { get; set; }
+        private IUserService UserService { get; set; }
 
         #endregion
 
         #region Blazor Overrides
+
+        protected override async Task OnInitializedAsync()
+        {
+            await base.OnInitializedAsync();
+
+            User = await UserService.GetUser();
+        }
 
         protected override async Task OnParametersSetAsync()
         {
@@ -65,7 +75,7 @@ namespace ThenAndNow.Pages
 
         private int PagesCount { get; set; }
 
-        private bool OriginalPhotoFirst { get; set; }
+        private User User { get; set; }
 
         private static readonly (Sorting Value, string Label)[] SortingOptions =
         [
@@ -101,6 +111,12 @@ namespace ThenAndNow.Pages
 
             StateHasChanged();
             await JsRuntime.InvokeVoidAsync(JsInteropKeys.ScrollTop);
+        }
+
+        private async Task OnOriginalPhotoFirst()
+        {
+            await UserService.SetUser(User);
+            StateHasChanged();
         }
 
         private void OnAfterSortingChange()

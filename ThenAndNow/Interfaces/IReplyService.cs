@@ -8,7 +8,7 @@ namespace ThenAndNow.Interfaces
 
         public Task AddReply();
         public Task<Reply[]> GetRepliesById(int id);
-        public Task ShowModal(Reply reply);
+        public Task ShowModal(int id);
 
         public event Action OnReplyAdded;
         public event Action OnReplyChanged;

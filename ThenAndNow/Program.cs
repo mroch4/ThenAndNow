@@ -34,7 +34,7 @@ namespace ThenAndNow
             builder.Services.TryAddScoped<IEntryRepository, EntryRepository>();
 
             builder.Services.TryAddScoped<IFirebaseService, FirebaseService>();
-            builder.Services.TryAddScoped<IAuthService, AuthService>();
+            builder.Services.TryAddScoped<IUserService, UserService>();
             builder.Services.TryAddScoped<IRatingService, RatingService>();
             builder.Services.TryAddScoped<IReplyService, ReplyService>();
 

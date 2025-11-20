@@ -2,12 +2,25 @@
 {
     public class User
     {
-        public string DisplayName { get; set; }
-        public string Email { get; set; }
-        public string Token { get; set; }
+        #region User Info
 
-        public bool IsValid =>
-            !string.IsNullOrEmpty(DisplayName) &&
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Color { get; set; }
+
+        public bool IsAuthenticated =>
+            !string.IsNullOrEmpty(Name) &&
             !string.IsNullOrEmpty(Email);
+
+        #endregion
+
+        #region Preferences
+
+        public bool ClosedBanner { get; set; }
+        public bool OriginalPhotoFirst { get; set; }
+
+        #endregion
+
+        public int[] Votes { get; set; }
     }
 }

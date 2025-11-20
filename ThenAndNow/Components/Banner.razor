@@ -1,4 +1,4 @@
-﻿@if (!BannerClosedByUser)
+﻿@if (User is { ClosedBanner: false })
 {
     <div class="alert alert-primary" role="alert">
         <h6>@Labels.BannerHeading</h6>

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
-using ThenAndNow.Constants;
 using ThenAndNow.Interfaces;
+using ThenAndNow.Models;
 
 namespace ThenAndNow.Components
 {
@@ -9,7 +9,7 @@ namespace ThenAndNow.Components
         #region Dependency Injection
 
         [Inject]
-        private ILocalStorageService LocalStorageService { get; set; }
+        private IUserService UserService { get; set; }
 
         #endregion
 
@@ -19,22 +19,17 @@ namespace ThenAndNow.Components
         {
             await base.OnInitializedAsync();
 
-            BannerClosedByUser = await GetValue();
+            User = await UserService.GetUser();
         }
 
         #endregion
 
-        private bool BannerClosedByUser { get; set; }
-
-        private async Task<bool> GetValue()
-        {
-            return await LocalStorageService.GetItem<bool>(LocalStorageKeys.BannerClosedByUser);
-        }
+        private User User { get; set; }
 
         private async Task OnClose()
         {
-            await LocalStorageService.SetItem(LocalStorageKeys.BannerClosedByUser, true);
-            BannerClosedByUser = await GetValue();
+            User.ClosedBanner = true;
+            await UserService.SetUser(User);
         }
     }
 }
