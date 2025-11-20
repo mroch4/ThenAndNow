@@ -5,17 +5,17 @@
     {
         if (Copied)
         {
-            <img alt="@Name" height="@Size" src="@("icons/socials/copied.svg")" width="@Size" />
+            <img alt="@Name" height="@Constants.IconSize" src="@("icons/socials/copied.svg")" width="@Constants.IconSize" />
         }
         else
         {
-            <img alt="@Name" height="@Size" src="@($"icons/socials/{Name}.svg")" width="@Size" @onclick="CopyToClipboard" />
+            <img alt="@Name" height="@Constants.IconSize" src="@($"icons/socials/{Name}.svg")" width="@Constants.IconSize" @onclick="CopyToClipboard" />
         }
     }
     else
     {
-        <a href="@(Route + DirectUrl)" rel="noopener noreferrer" target="_blank">
-            <img alt="@Name" height="@Size" src="@($"icons/socials/{Name}.svg")" width="@Size" />
+        <a href="@(Route + Url)" rel="noopener noreferrer" target="_blank">
+            <img alt="@Name" height="@Constants.IconSize" src="@($"icons/socials/{Name}.svg")" width="@Constants.IconSize" />
         </a>
     }
 </button>

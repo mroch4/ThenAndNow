@@ -1,5 +1,4 @@
-﻿using ThenAndNow.Constants;
-using ThenAndNow.Interfaces;
+﻿using ThenAndNow.Interfaces;
 using ThenAndNow.Models;
 
 namespace ThenAndNow.Services
@@ -10,9 +9,10 @@ namespace ThenAndNow.Services
 
         public async Task<User> GetCurrentUser()
         {
+            //TODO: Auth
             //User ??= await firebaseService.SignInWithGoogle();
-            User ??= new User { DisplayName = Labels.Author, Email = Labels.Email };
-            //User ??= new User();
+            //User ??= new User { DisplayName = Labels.Author, Email = Labels.Email };
+            User ??= new User();
             return User;
         }
 

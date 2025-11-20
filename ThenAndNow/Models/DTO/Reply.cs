@@ -12,9 +12,9 @@ namespace ThenAndNow.Models.DTO
         public DateTime Timestamp => DateTimeOffset.FromUnixTimeMilliseconds(Id).DateTime;
 
         [JsonIgnore]
-        public string TimestampString => Timestamp.ToString("F", new CultureInfo("pl-PL"));
+        public string TimestampString => Timestamp.ToString("F", new CultureInfo(Constants.Constants.CultureInfo));
 
         [JsonIgnore]
-        public string Initial => Name[0].ToString();
+        public string Initial => Name[0].ToString().ToUpper();
     }
 }

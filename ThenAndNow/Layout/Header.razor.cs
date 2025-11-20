@@ -33,8 +33,8 @@ namespace ThenAndNow.Layout
             },
             new()
             {
-                Label = Labels.About,
-                Route = Routes.About
+                Label = Labels.Contact,
+                Route = Routes.Contact
             }
         ];
     }

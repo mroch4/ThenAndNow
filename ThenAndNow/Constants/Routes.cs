@@ -6,8 +6,8 @@ namespace ThenAndNow.Constants
     {
         #region Internal
 
-        public const string About = "/about";
         public const string Admin = "/admin";
+        public const string Contact = "/contact";
         public const string Entry = "/entry";
         public const string Map = "/map";
         public const string Random = "/random";
@@ -20,7 +20,7 @@ namespace ThenAndNow.Constants
 
         public const string Cyryl = "https://cyryl.poznan.pl/";
         public const string Flickr = "https://www.flickr.com/people/137860135@N05";
-        public const string Fotopolska = "https://fotopolska.eu/";
+        public const string Fotopolska = "https://poznan.fotopolska.eu/";
         public const string Github = "https://github.com/mroch4";
 
         public const string GoogleMapBaseUrl = "http://maps.google.com/maps";

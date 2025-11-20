@@ -10,7 +10,7 @@
 
         #region Navbar
 
-        public const string About = "O blogu";
+        public const string Contact = "Kontakt";
         public const string Map = "Mapa";
         public const string Random = "Losuj";
         public const string Tags = "Tagi";
@@ -23,15 +23,11 @@
 
         #endregion
 
-        #region AboutPage
+        #region ContactPage
 
-        public const string Content = "Cześć, nazywam się Marcin Rochowski i witam na moim blogu! Strona powstała na skutek fuzji kilku moich hobby: pasji do fotografii, zawodowego zamiłowania do webdevelopmentu oraz zainteresowania historią. Wszystkie współcześne zdjęcia są mojego autorstwa, zdjęcia z przeszłości pochodzą zaś z ogólnodostępnych zasobów (spójrz poniżej). Jeśli masz jakieś niesamowite zdjęcia Poznania wykonane przed laty i chcesz się nimi podzielić - koniecznie daj mi znać :)";
-        public const string Contact = "Kontakt ze mną:";
         public const string Cyryl = "CYRYL - Wirtualne Muzeum Historii Poznania";
         public const string Email = "rochowski.marcin(at)gmail.com";
-        public const string Flickr = "Flickr";
-        public const string Fotopolska = "FOTOPOLSKA - Baza zdjęć przedstawiających polskie miasta";
-        public const string Github = "Github";
+        public const string Fotopolska = "FOTOPOLSKA - Baza zdjęć Poznania";
         public const string Sources = "Zasoby zdjęć historycznych:";
 
         #endregion

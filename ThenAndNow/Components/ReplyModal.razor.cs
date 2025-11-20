@@ -33,6 +33,16 @@ namespace ThenAndNow.Components
 
         public Reply Reply => ReplyService.Reply ?? new Reply();
 
+        #region Private members
+
+        private bool Disabled => string.IsNullOrEmpty(Reply.Name) ||
+                                 Reply.Name.Length > MaxNameLength ||
+                                 string.IsNullOrEmpty(Reply.Content) ||
+                                 Reply.Content.Length > MaxContentLength;
+
+        private const int MaxContentLength = 500;
+        private const int MaxNameLength = 25;
+
         private async Task AddReply()
         {
             await ReplyService.AddReply();
@@ -49,12 +59,6 @@ namespace ThenAndNow.Components
             ReplyService.Reply.Content = content;
             StateHasChanged();
         }
-
-        #region Private members
-
-        private bool Disabled => string.IsNullOrEmpty(Reply.Content) || Reply.Content.Length > MaxContentLength;
-
-        private const int MaxContentLength = 500;
 
         #endregion
     }

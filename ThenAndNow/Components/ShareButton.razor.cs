@@ -10,7 +10,7 @@ namespace ThenAndNow.Components
         #region Parameters
 
         [Parameter]
-        public string DirectUrl { get; set; }
+        public string Url { get; set; }
 
         [Parameter]
         public SocialMediaType Type { get; set; }
@@ -34,6 +34,8 @@ namespace ThenAndNow.Components
             {
                 SocialMediaType.Copy => null,
                 SocialMediaType.Facebook => Routes.Facebook,
+                SocialMediaType.Flickr => Routes.Flickr,
+                SocialMediaType.Github => Routes.Github,
                 SocialMediaType.LinkedIn => Routes.LinkedIn,
                 SocialMediaType.Mailto => Routes.Mailto,
                 SocialMediaType.Messenger => Routes.Messenger,
@@ -46,15 +48,13 @@ namespace ThenAndNow.Components
 
         #endregion
 
-        private const int Size = 20;
-
         private bool Copied { get; set; }
         private string Name => Type.ToString().ToLower();
         private string Route { get; set; }
 
         private async Task CopyToClipboard()
         {
-            await JsRuntime.InvokeVoidAsync("navigator.clipboard.writeText", DirectUrl);
+            await JsRuntime.InvokeVoidAsync("navigator.clipboard.writeText", Url);
             ToggleCopied(true);
 
             await Task.Delay(1000);

@@ -59,24 +59,22 @@ namespace ThenAndNow.Components
 
         private async Task<Reply> AuthReply()
         {
-            var user = await AuthService.GetCurrentUser();
+            //TODO: Auth
+            //var user = await AuthService.GetCurrentUser();
 
-            if (!user.IsValid) return null;
+            //if (!user.IsValid) return null;
 
-            var colour = await LocalStorageService.GetItem<string>(user.Email);
-
-            if (string.IsNullOrEmpty(colour))
-            {
-                colour = GetRandomColour();
-                await LocalStorageService.SetItem(user.Email, colour);
-            }
+            //var colour = await LocalStorageService.GetItem<string>(user.Email);
+            //if (string.IsNullOrEmpty(colour))
+            //{
+            //    colour = GetRandomColour();
+            //    await LocalStorageService.SetItem(user.Email, colour);
+            //}
 
             return new Reply
             {
                 EntryId = Id,
-                Name = user.DisplayName,
-                Email = user.Email,
-                Color = colour
+                Color = GetRandomColour()
             };
         }
 

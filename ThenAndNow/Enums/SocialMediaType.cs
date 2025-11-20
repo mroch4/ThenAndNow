@@ -4,6 +4,8 @@
     {
         Copy,
         Facebook,
+        Flickr,
+        Github,
         LinkedIn,
         Mailto,
         Messenger,

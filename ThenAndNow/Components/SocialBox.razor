@@ -3,7 +3,7 @@
         <div class="d-flex flex-wrap gap-2">
             @foreach (var buttonType in SocialButtons)
             {
-                <ShareButton Type="buttonType" DirectUrl="@DirectUrl" />
+                <ShareButton Type="buttonType" Url="@DirectUrl" />
             }
         </div>
         <button class="btn btn-sm btn-dark" @onclick="ToggleReplies">@(ShowReplies? Labels.HideReplies: Labels.ShowReplies)</button>
