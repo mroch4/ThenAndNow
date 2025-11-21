@@ -44,7 +44,7 @@ namespace ThenAndNow.Services
             await localStorageService.SetItem(UserKey, User);
         }
 
-        private const string UserKey = "user";
+        private const string UserKey = nameof(User);
 
         #endregion
     }

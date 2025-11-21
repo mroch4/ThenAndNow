@@ -115,7 +115,9 @@ namespace ThenAndNow.Pages
 
         private async Task OnOriginalPhotoFirst()
         {
-            await UserService.SetUser(User);
+            var user = await UserService.GetUser();
+            user.OriginalPhotoFirst = User.OriginalPhotoFirst;
+            await UserService.SetUser(user);
             StateHasChanged();
         }
 
