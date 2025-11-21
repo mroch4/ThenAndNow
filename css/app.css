@@ -208,7 +208,7 @@ p {
     display: none;
   }
 }
-.btn-social.copy, .btn-social.mailto {
+.btn-social.copy, .btn-social.mailto, .btn-social.mailtoauthor {
   background-color: var(--bs-gray-600);
 }
 .btn-social.xtwitter {
