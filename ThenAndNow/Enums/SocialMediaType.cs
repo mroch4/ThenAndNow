@@ -8,6 +8,7 @@
         Github,
         LinkedIn,
         Mailto,
+        MailtoAuthor,
         Messenger,
         Sms,
         WhatsUp,

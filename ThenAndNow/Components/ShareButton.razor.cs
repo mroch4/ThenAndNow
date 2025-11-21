@@ -38,6 +38,7 @@ namespace ThenAndNow.Components
                 SocialMediaType.Github => Routes.Github,
                 SocialMediaType.LinkedIn => Routes.LinkedIn,
                 SocialMediaType.Mailto => Routes.Mailto,
+                SocialMediaType.MailtoAuthor => Routes.MailtoAuthor,
                 SocialMediaType.Messenger => Routes.Messenger,
                 SocialMediaType.Sms => Routes.Sms,
                 SocialMediaType.WhatsUp => Routes.WhatsUp,

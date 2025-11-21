@@ -6,7 +6,7 @@ namespace ThenAndNow.Pages
     {
         public static readonly SocialMediaType[] SocialButtons =
         [
-            SocialMediaType.Mailto,
+            SocialMediaType.MailtoAuthor,
             SocialMediaType.Flickr,
             SocialMediaType.Github
         ];

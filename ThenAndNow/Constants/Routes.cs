@@ -6,7 +6,6 @@ namespace ThenAndNow.Constants
     {
         #region Internal
 
-        public const string Admin = "/admin";
         public const string Contact = "/contact";
         public const string Entry = "/entry";
         public const string Map = "/map";
@@ -19,15 +18,19 @@ namespace ThenAndNow.Constants
         #region External
 
         public const string Cyryl = "https://cyryl.poznan.pl/";
-        public const string Flickr = "https://www.flickr.com/people/137860135@N05";
         public const string Fotopolska = "https://poznan.fotopolska.eu/";
-        public const string Github = "https://github.com/mroch4";
-
         public const string GoogleMapBaseUrl = "http://maps.google.com/maps";
 
+        #endregion
+
+        #region Socials
+
         public const string Facebook = "https://www.facebook.com/sharer/sharer.php?u=";
+        public const string Flickr = "https://www.flickr.com/people/137860135@N05";
+        public const string Github = "https://github.com/mroch4";
         public const string LinkedIn = "https://www.linkedin.com/shareArticle?mini=true&url=";
         public const string Mailto = "mailto:?body=";
+        public const string MailtoAuthor = $"mailto:{Constants.AuthorEmail}?body=";
         public const string Messenger = "fb-messenger://share/?link=";
         public const string Sms = "sms:?body=";
         public const string WhatsUp = "https://api.whatsapp.com/send?text=";
