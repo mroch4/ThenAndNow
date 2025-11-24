@@ -6,7 +6,7 @@
 
         public string Name { get; set; }
         public string Email { get; set; }
-        public string Color { get; set; }
+        public string Icon { get; set; }
 
         public bool IsAuthenticated =>
             !string.IsNullOrEmpty(Name) &&
@@ -14,13 +14,14 @@
 
         #endregion
 
-        #region Preferences
+        public Preferences Preferences { get; set; } = new();
+        public int[] Votes { get; set; } = [];
+        public string LastUpdatedAt { get; set; }
+    }
 
-        public bool ClosedBanner { get; set; }
+    public class Preferences
+    {
+        public bool BannerClosed { get; set; }
         public bool OriginalPhotoFirst { get; set; }
-
-        #endregion
-
-        public int[] Votes { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
 using ThenAndNow.Interfaces;
-using ThenAndNow.Models;
 
 namespace ThenAndNow.Components
 {
@@ -19,17 +18,16 @@ namespace ThenAndNow.Components
         {
             await base.OnInitializedAsync();
 
-            User = await UserService.GetUser();
+            BannerClosed = await UserService.GetBannerClosed();
         }
 
         #endregion
 
-        private User User { get; set; }
+        private bool BannerClosed { get; set; }
 
         private async Task OnClose()
         {
-            User.ClosedBanner = true;
-            await UserService.SetUser(User);
+            BannerClosed = await UserService.SetBannerClosed();
         }
     }
 }

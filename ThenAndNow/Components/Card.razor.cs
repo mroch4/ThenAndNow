@@ -67,12 +67,13 @@ namespace ThenAndNow.Components
         #region Private Properties
 
         private bool DataLoaded { get; set; }
+        private bool DetailsLoaded { get; set; }
         private string DirectUrl => $"{AppConfiguration.BaseUrl}{Routes.Entry}?{Routes.EntryIdQueryParamName}={Entry.Id}";
         private bool OriginalPhoto { get; set; }
 
         private Rating Rating { get; set; }
         private string RatingDesc { get; set; }
-        private bool? RatingEnabled { get; set; }
+        private bool? VotingEnabled { get; set; }
 
         #endregion
 
@@ -80,15 +81,17 @@ namespace ThenAndNow.Components
 
         private async Task GetDetails()
         {
-            Rating ??= await RatingService.GetRatingById(Entry.Id);
-            RatingDesc ??= GetRatingDesc();
-            RatingEnabled ??= await GetRatingEnabled();
-
-            if (Entry.Description == null)
+            if (!DetailsLoaded)
             {
+                Rating ??= await RatingService.GetRatingById(Entry.Id);
+                RatingDesc ??= GetRatingDesc();
+                VotingEnabled ??= await RatingService.GetVotingEnabled(Entry.Id);
+
                 var details = await EntryRepository.GetDetailsById(Entry.Id);
                 Entry.Description = details.Description ?? string.Empty;
                 Entry.Tags = details.Tags ?? [];
+
+                DetailsLoaded = true;
             }
         }
 
@@ -96,8 +99,7 @@ namespace ThenAndNow.Components
         {
             return OriginalPhoto
                 ? Entry.Timestamp.Then
-                : Entry.Timestamp.Now.ToString("Y", CultureInfo.GetCultureInfo("pl-PL"));
-            //: Entry.Timestamp.Now.ToString("f", CultureInfo.GetCultureInfo("pl-PL"));
+                : Entry.Timestamp.Now.ToString("Y", CultureInfo.GetCultureInfo(Constants.Constants.CultureInfo));
         }
 
         private string GetImagePath(ImageSize imageSize, bool isOriginal = false)
@@ -111,11 +113,6 @@ namespace ThenAndNow.Components
             return $"?q=" +
                    $"{Entry.Coordinates.Latitude.ToString("N6", CultureInfo.GetCultureInfo("en-US"))}+" +
                    $"{Entry.Coordinates.Longitude.ToString("N6", CultureInfo.GetCultureInfo("en-US"))}";
-        }
-
-        private async Task<bool> GetRatingEnabled()
-        {
-            return await RatingService.RatingEnabled(Entry.Id);
         }
 
         private string GetRatingDesc()
@@ -135,19 +132,22 @@ namespace ThenAndNow.Components
         {
             Rating = await RatingService.ThumbsDown(Entry.Id);
             RatingDesc = GetRatingDesc();
-            RatingEnabled = await GetRatingEnabled();
+            VotingEnabled = await RatingService.GetVotingEnabled(Entry.Id);
         }
 
         private async Task ThumbsUp()
         {
             Rating = await RatingService.ThumbsUp(Entry.Id);
             RatingDesc = GetRatingDesc();
-            RatingEnabled = await GetRatingEnabled();
+            VotingEnabled = await RatingService.GetVotingEnabled(Entry.Id);
         }
 
         private async Task ToggleDetails()
         {
-            await GetDetails();
+            if (!ShowDetails && !DetailsLoaded)
+            {
+                await GetDetails();
+            }
             ShowDetails = !ShowDetails;
         }
 

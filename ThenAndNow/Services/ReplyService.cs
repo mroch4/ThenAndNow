@@ -11,13 +11,7 @@ namespace ThenAndNow.Services
 
         public async Task AddReply()
         {
-            var user = await userService.GetUser();
-
-            if (string.IsNullOrEmpty(user.Name))
-            {
-                user.Name = Reply.Name;
-                await userService.SetUser(user);
-            }
+            await SetUserName();
 
             Reply.Id = DateTimeOffset.Now.ToUnixTimeMilliseconds();
 
@@ -35,7 +29,13 @@ namespace ThenAndNow.Services
 
         public async Task ShowModal(int id)
         {
-            Reply = await SetReply(id);
+            Reply = new Reply
+            {
+                EntryId = id,
+                Icon = await GetUserIcon(),
+                Name = await userService.GetUserName()
+            };
+
             OnReplyChanged?.Invoke();
 
             await jsRuntime.InvokeVoidAsync(JsInteropKeys.ShowModal, Constants.Constants.ReplyModalId);
@@ -46,37 +46,32 @@ namespace ThenAndNow.Services
 
         #region Private members
 
-        private static string GetRandomColour()
+        private async Task<string> GetUserIcon()
         {
-            var random = new Random();
-            return Colours[random.Next(Colours.Length)];
-        }
+            var icon = await userService.GetUserIcon();
 
-        private async Task<Reply> SetReply(int id)
-        {
-            var user = await userService.GetUser();
+            return string.IsNullOrEmpty(icon)
+                ? await userService.SetUserIcon(GetRandomIconColor())
+                : icon;
 
-            if (string.IsNullOrEmpty(user.Color))
+            static string GetRandomIconColor()
             {
-                user.Color = GetRandomColour();
-                await userService.SetUser(user);
+                var random = new Random();
+                return IconColors[random.Next(IconColors.Length)];
             }
-
-            return new Reply
-            {
-                Name = user.Name,
-                Email = user.Email,
-                Color = user.Color,
-                EntryId = id
-            };
         }
 
         private async Task SetUserName()
         {
+            var name = await userService.GetUserName();
 
+            if (string.IsNullOrEmpty(name) || !string.Equals(name, Reply.Name))
+            {
+                await userService.SetUserName(Reply.Name);
+            }
         }
 
-        private static readonly string[] Colours = [
+        private static readonly string[] IconColors = [
             "2980B9",
             "3498DB",
             "D35400",

@@ -15,27 +15,29 @@
         </section>
         @if (ShowDetails)
         {
-            <div>
-                <hr />
-                <div class="d-flex justify-content-end my-2">
-                    <span>@GetRatingDesc()</span>
-                    @if (RatingEnabled is true)
+            <Loader DataLoaded="DetailsLoaded">
+                <div>
+                    <hr />
+                    <div class="d-flex justify-content-end my-2">
+                        <span>@GetRatingDesc()</span>
+                        @if (VotingEnabled is true)
+                        {
+                            <img alt="Thumbs up" class="mx-2" src="icons/thumbsUp.svg" title="@Labels.ThumbsUp" @onclick="ThumbsUp" />
+                            <img alt="Thumbs down" src="icons/thumbsDown.svg" title="@Labels.ThumbsDown" @onclick="ThumbsDown" />
+                        }
+                    </div>
+                    @if (!string.IsNullOrEmpty(Entry.Description))
                     {
-                        <img alt="Thumbs up" class="mx-2" src="icons/thumbsUp.svg" title="@Labels.ThumbsUp" @onclick="ThumbsUp" />
-                        <img alt="Thumbs down" src="icons/thumbsDown.svg" title="@Labels.ThumbsDown" @onclick="ThumbsDown" />
+                        <p>@Entry.Description</p>
                     }
+                    <div class="d-flex flex-wrap">
+                        @foreach (var tag in Entry.Tags)
+                        {
+                            <span class="tag" @onclick="() => NavigationService.Navigate(new QueryParams { Tag = tag })">@tag</span>
+                        }
+                    </div>
                 </div>
-                @if (!string.IsNullOrEmpty(Entry.Description))
-                {
-                    <p>@Entry.Description</p>
-                }
-                <div class="d-flex flex-wrap">
-                    @foreach (var tag in Entry.Tags)
-                    {
-                        <span class="tag" @onclick="() => NavigationService.Navigate(new QueryParams { Tag = tag })">@tag</span>
-                    }
-                </div>
-            </div>
+            </Loader>
         }
         <Loader DataLoaded="true">
             <figure class="text-center mt-3">

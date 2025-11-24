@@ -54,7 +54,7 @@ namespace ThenAndNow.Pages
         {
             await base.OnInitializedAsync();
 
-            User = await UserService.GetUser();
+            OriginalPhotoFirst = await UserService.GetOriginalPhotoFirst();
         }
 
         protected override async Task OnParametersSetAsync()
@@ -73,9 +73,8 @@ namespace ThenAndNow.Pages
 
         private QueryParams QueryParams { get; set; }
 
+        private bool OriginalPhotoFirst { get; set; }
         private int PagesCount { get; set; }
-
-        private User User { get; set; }
 
         private static readonly (Sorting Value, string Label)[] SortingOptions =
         [
@@ -113,18 +112,15 @@ namespace ThenAndNow.Pages
             await JsRuntime.InvokeVoidAsync(JsInteropKeys.ScrollTop);
         }
 
-        private async Task OnOriginalPhotoFirst()
-        {
-            var user = await UserService.GetUser();
-            user.OriginalPhotoFirst = User.OriginalPhotoFirst;
-            await UserService.SetUser(user);
-            StateHasChanged();
-        }
-
         private void OnAfterSortingChange()
         {
             QueryParams.CurrentPage = 0;
             NavigationService.Navigate(QueryParams);
+        }
+
+        private async Task OnOriginalPhotoFirst()
+        {
+            OriginalPhotoFirst = await UserService.SetOriginalPhotoFirst(OriginalPhotoFirst);
         }
 
         #endregion

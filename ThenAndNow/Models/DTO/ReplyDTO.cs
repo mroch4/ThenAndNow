@@ -17,6 +17,6 @@ namespace ThenAndNow.Models.DTO
         public string Content { get; set; }
 
         [JsonPropertyName("e")]
-        public string Color { get; set; } = "000";
+        public string Icon { get; set; }
     }
 }

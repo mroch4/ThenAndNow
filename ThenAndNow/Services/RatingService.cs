@@ -1,23 +1,18 @@
-﻿using ThenAndNow.Constants;
-using ThenAndNow.Interfaces;
+﻿using ThenAndNow.Interfaces;
 using ThenAndNow.Models.DTO;
 
 namespace ThenAndNow.Services
 {
-    public class RatingService(IFirebaseService firebaseService, ILocalStorageService localStorageService) : IRatingService
+    public class RatingService(IFirebaseService firebaseService, IUserService userService) : IRatingService
     {
-        #region Public methods
-
         public async Task<Rating> GetRatingById(int id)
         {
             return await firebaseService.GetRatingById(id);
         }
 
-        public async Task<bool> RatingEnabled(int id)
+        public async Task<bool> GetVotingEnabled(int id)
         {
-            var userVotes = await GetUserVotes();
-
-            return !userVotes.Contains(id);
+            return await userService.GetVotingEnabled(id);
         }
 
         public async Task<Rating> ThumbsDown(int id)
@@ -26,7 +21,7 @@ namespace ThenAndNow.Services
 
             if (result.Success)
             {
-                await UpdateUserVotes(id);
+                await userService.SetVotes(id);
             }
 
             return result.Rating;
@@ -38,31 +33,10 @@ namespace ThenAndNow.Services
 
             if (result.Success)
             {
-                await UpdateUserVotes(id);
+                await userService.SetVotes(id);
             }
 
             return result.Rating;
         }
-
-        #endregion
-
-        #region Private methods
-
-        private async Task<int[]> GetUserVotes()
-        {
-            return await localStorageService.GetItem<int[]>(LocalStorageKeys.UserVotes) ?? [];
-        }
-
-        private async Task UpdateUserVotes(int id)
-        {
-            var userVotes = await GetUserVotes();
-
-            if (await RatingEnabled(id))
-            {
-                await localStorageService.SetItem(LocalStorageKeys.UserVotes, userVotes.Append(id).ToArray());
-            }
-        }
-
-        #endregion
     }
 }

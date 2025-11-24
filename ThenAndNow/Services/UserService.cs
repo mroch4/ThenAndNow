@@ -5,17 +5,14 @@ namespace ThenAndNow.Services
 {
     public class UserService(IFirebaseService firebaseService, ILocalStorageService localStorageService) : IUserService
     {
-        private User User { get; set; }
+        private User _user;
+        private const string UserKey = nameof(User);
 
         #region Authentication
 
         public async Task<User> GetUserAuth()
         {
-            //TODO: Auth
-            //User ??= await firebaseService.SignInWithGoogle();
-            //User ??= new User { DisplayName = Labels.Author, Email = Labels.Email };
-            User ??= new User();
-            return User;
+            return _user = await firebaseService.SignInWithGoogle();
         }
 
         public async Task<User> SignInWithGoogle()
@@ -30,21 +27,105 @@ namespace ThenAndNow.Services
 
         #endregion
 
-        #region Local
+        #region User Preferences
 
-        public async Task<User> GetUser()
+        public async Task<bool> GetBannerClosed()
         {
-            User = await localStorageService.GetItem<User>(UserKey) ?? new User();
-            return User;
+            var user = await GetUser();
+            return user.Preferences.BannerClosed;
         }
 
-        public async Task SetUser(User user)
+        public async Task<bool> SetBannerClosed()
         {
-            User = user;
-            await localStorageService.SetItem(UserKey, User);
+            var user = await GetUser();
+            user.Preferences.BannerClosed = true;
+            await SetUser();
+            return true;
         }
 
-        private const string UserKey = nameof(User);
+        public async Task<bool> GetOriginalPhotoFirst()
+        {
+            var user = await GetUser();
+            return user.Preferences.OriginalPhotoFirst;
+        }
+
+        public async Task<bool> SetOriginalPhotoFirst(bool value)
+        {
+            var user = await GetUser();
+            user.Preferences.OriginalPhotoFirst = value;
+            await SetUser();
+            return value;
+        }
+
+        #endregion
+
+        #region User Properties
+
+        public async Task<string> GetUserIcon()
+        {
+            var user = await GetUser();
+            return user.Icon;
+        }
+
+        public async Task<string> SetUserIcon(string color)
+        {
+            var user = await GetUser();
+            user.Icon = color;
+            await SetUser();
+            return color;
+        }
+
+        public async Task<string> GetUserName()
+        {
+            var user = await GetUser();
+            return user.Name;
+        }
+
+        public async Task SetUserName(string userName)
+        {
+            var user = await GetUser();
+            user.Name = userName;
+            await SetUser();
+        }
+
+        #endregion
+
+        public async Task<int[]> GetVotes()
+        {
+            var user = await GetUser();
+            return user.Votes;
+        }
+
+        public async Task<bool> GetVotingEnabled(int id)
+        {
+            var user = await GetUser();
+            return !user.Votes.Contains(id);
+        }
+
+        public async Task SetVotes(int id)
+        {
+            if (await GetVotingEnabled(id))
+            {
+                var user = await GetUser();
+                user.Votes = user.Votes.Append(id).ToArray();
+                await SetUser();
+            }
+        }
+
+        #region Private Helpers
+
+        private async Task<User> GetUser()
+        {
+            return _user ??= await localStorageService.GetItem<User>(UserKey) ?? new User();
+        }
+
+        private async Task SetUser()
+        {
+            if (_user == null) return;
+
+            _user.LastUpdatedAt = DateTime.Now.ToString("G");
+            await localStorageService.SetItem(UserKey, _user);
+        }
 
         #endregion
     }
