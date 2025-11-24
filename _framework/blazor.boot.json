@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "ThenAndNow",
   "resources": {
-    "hash": "sha256-J75e6sHW1qGtv2/IMD3QmGK/ffhix9ctGKsIcFUF1Zc=",
+    "hash": "sha256-FesWyejWUWzSySDbHUQKxcos8dfCl9fV/rl9tVKFw7M=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.k428f3631i.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Forms.uyuitmimef.wasm": "Microsoft.AspNetCore.Components.Forms.wasm",
@@ -46,8 +46,8 @@
       "System.Text.RegularExpressions.k8ibga7wut.wasm": "System.Text.RegularExpressions.wasm",
       "System.Threading.5j2dbunw49.wasm": "System.Threading.wasm",
       "System.t4d4s3f398.wasm": "System.wasm",
-      "System.Private.CoreLib.5vfiqpkvve.wasm": "System.Private.CoreLib.wasm",
-      "ThenAndNow.4t2z99kbus.wasm": "ThenAndNow.wasm",
+      "System.Private.CoreLib.apa65jey2c.wasm": "System.Private.CoreLib.wasm",
+      "ThenAndNow.9wpzadk6jx.wasm": "ThenAndNow.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.native.noby4tlk4d.js": "dotnet.native.js",
       "dotnet.native.qe75a9vfqn.wasm": "dotnet.native.wasm",
@@ -68,7 +68,7 @@
     },
     "coreAssembly": {
       "System.Runtime.InteropServices.JavaScript.u9tzo6t7zm.wasm": "sha256-8v7jVijrzRlaTmvdds4+ZNyPL5DYfnYnzFYT2HtkqwM=",
-      "System.Private.CoreLib.5vfiqpkvve.wasm": "sha256-0X6v15g6CA95P+ynWXJeqnQLQNcIQW4epYdhoLsP6LQ="
+      "System.Private.CoreLib.apa65jey2c.wasm": "sha256-riwYx11BO19bacBNsJrX9dTlJnC+kWuSMnp8SES8w/U="
     },
     "assembly": {
       "Microsoft.AspNetCore.Components.k428f3631i.wasm": "sha256-xDckVdGrA3F5IzWJOZjnNkOM6pLVU1Yv1yfC4TT3gdQ=",
@@ -113,7 +113,7 @@
       "System.Text.RegularExpressions.k8ibga7wut.wasm": "sha256-7OYvLuFLvwbax++2u+uoDmoaX8o/Q8wcYJC92eP1YjA=",
       "System.Threading.5j2dbunw49.wasm": "sha256-EeGM7ygAh4ofzhzD4najJcOc0g3Sz1mCTQkx8UbM4DY=",
       "System.t4d4s3f398.wasm": "sha256-fVP2BxRRKpBA0PmBbKxmO45bXDrAXVn1GthlDclLbeU=",
-      "ThenAndNow.4t2z99kbus.wasm": "sha256-CJrIVuwdT8qhAUVARGADOIfpDcVuzRvKfxpdRQAHpRs="
+      "ThenAndNow.9wpzadk6jx.wasm": "sha256-JzQiOQfbzt23gEhjbgh6Bbz/0f2uJQNSx051906Iuhs="
     }
   },
   "cacheBootResources": true,
