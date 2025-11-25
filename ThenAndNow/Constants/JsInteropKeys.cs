@@ -2,27 +2,22 @@
 {
     public static class JsInteropKeys
     {
-        #region Auth
+        #region Blazor Interop
 
-        public const string GetCurrentUser = $"{FirebaseInterop}.getCurrentUser";
-        public const string SignInWithGoogle = $"{FirebaseInterop}.signInWithGoogle";
-        public const string SignOut = $"{FirebaseInterop}.signOut";
+        public const string ScrollTo = $"{BlazorInterop}.scrollTo";
+        public const string ScrollTop = $"{BlazorInterop}.scrollTop";
 
         #endregion
 
-        #region Bootstrap
+        #region Bootstrap Interop
 
         public const string ShowModal = $"{BootstrapInterop}.showModal";
 
-        private const string BootstrapInterop = $"bootstrap{Interop}";
-
         #endregion
 
-        #region Leaflet Map
+        #region Leaflet Map Interop
 
         public const string InitMap = $"{LeafletMapInterop}.init";
-
-        private const string LeafletMapInterop = $"leafletMap{Interop}";
 
         #endregion
 
@@ -49,10 +44,10 @@
 
         #endregion
 
-        public const string ScrollTo = $"window.blazor{Interop}.scrollTo";
-        public const string ScrollTop = $"window.blazor{Interop}.scrollTop";
-
+        private const string BlazorInterop = $"blazor{Interop}";
+        private const string BootstrapInterop = $"bootstrap{Interop}";
         private const string FirebaseInterop = $"firebase{Interop}";
+        private const string LeafletMapInterop = $"leafletMap{Interop}";
 
         private const string Interop = "Interop";
     }

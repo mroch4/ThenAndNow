@@ -1,19 +1,17 @@
-﻿@attribute [Route(Routes.Contact)]
-
-<div class="d-flex flex-column gap-3">
+﻿<div class="d-flex flex-column gap-3">
     <div class="flex-center gap-2">
-        @foreach (var buttonType in SocialButtons)
+        @foreach (var button in SocialButtons)
         {
-            <ShareButton Type="buttonType" />
+            <ShareButton Type="button" />
         }
     </div>
     <h6>@Labels.Sources</h6>
     <ul>
-        <li>
-            <a href="@Routes.Cyryl" target="_blank">@Labels.Cyryl</a>
-        </li>
-        <li>
-            <a href="@Routes.Fotopolska" target="_blank">@Labels.Fotopolska</a>
-        </li>
+        @foreach (var item in NavItems)
+        {
+            <li>
+                <a href="@item.Route" target="_blank">@item.Label</a>
+            </li>
+        }
     </ul>
 </div>

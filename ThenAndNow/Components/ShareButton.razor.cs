@@ -10,10 +10,10 @@ namespace ThenAndNow.Components
         #region Parameters
 
         [Parameter]
-        public string Url { get; set; }
+        public SocialMediaType Type { get; set; }
 
         [Parameter]
-        public SocialMediaType Type { get; set; }
+        public string Url { get; set; }
 
         #endregion
 
@@ -35,10 +35,10 @@ namespace ThenAndNow.Components
                 SocialMediaType.Copy => null,
                 SocialMediaType.Facebook => Routes.Facebook,
                 SocialMediaType.Flickr => Routes.Flickr,
-                SocialMediaType.Github => Routes.Github,
+                SocialMediaType.GitHub => Routes.GitHub,
                 SocialMediaType.LinkedIn => Routes.LinkedIn,
-                SocialMediaType.Mailto => Routes.Mailto,
-                SocialMediaType.MailtoAuthor => Routes.MailtoAuthor,
+                SocialMediaType.MailTo => Routes.MailTo,
+                SocialMediaType.MailToAuthor => Routes.MailToAuthor,
                 SocialMediaType.Messenger => Routes.Messenger,
                 SocialMediaType.Sms => Routes.Sms,
                 SocialMediaType.WhatsUp => Routes.WhatsUp,
@@ -48,6 +48,8 @@ namespace ThenAndNow.Components
         }
 
         #endregion
+
+        #region Private members
 
         private bool Copied { get; set; }
         private string Name => Type.ToString().ToLower();
@@ -67,5 +69,7 @@ namespace ThenAndNow.Components
             Copied = value;
             StateHasChanged();
         }
+
+        #endregion
     }
 }

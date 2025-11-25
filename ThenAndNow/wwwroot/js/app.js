@@ -13,7 +13,7 @@
         }
     },
 
-    scrollTop: function (elementId) {
+    scrollTop: function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
 };

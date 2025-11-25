@@ -3,29 +3,10 @@ using ThenAndNow.Models;
 
 namespace ThenAndNow.Services
 {
-    public class UserService(IFirebaseService firebaseService, ILocalStorageService localStorageService) : IUserService
+    public class UserService(ILocalStorageService localStorageService) : IUserService
     {
         private User _user;
         private const string UserKey = nameof(User);
-
-        #region Authentication
-
-        public async Task<User> GetUserAuth()
-        {
-            return _user = await firebaseService.SignInWithGoogle();
-        }
-
-        public async Task<User> SignInWithGoogle()
-        {
-            return await firebaseService.SignInWithGoogle();
-        }
-
-        public async Task SignOut()
-        {
-            await firebaseService.SignOut();
-        }
-
-        #endregion
 
         #region User Preferences
 
@@ -123,7 +104,7 @@ namespace ThenAndNow.Services
         {
             if (_user == null) return;
 
-            _user.LastUpdatedAt = DateTime.Now.ToString("G");
+            _user.LastUpdate = DateTime.Now.ToString("G");
             await localStorageService.SetItem(UserKey, _user);
         }
 

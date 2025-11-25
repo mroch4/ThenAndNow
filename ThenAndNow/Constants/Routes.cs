@@ -27,10 +27,10 @@ namespace ThenAndNow.Constants
 
         public const string Facebook = "https://www.facebook.com/sharer/sharer.php?u=";
         public const string Flickr = "https://www.flickr.com/people/137860135@N05";
-        public const string Github = "https://github.com/mroch4";
+        public const string GitHub = "https://github.com/mroch4";
         public const string LinkedIn = "https://www.linkedin.com/shareArticle?mini=true&url=";
-        public const string Mailto = "mailto:?body=";
-        public const string MailtoAuthor = $"mailto:{Constants.AuthorEmail}?body=";
+        public const string MailTo = "mailto:?body=";
+        public const string MailToAuthor = $"mailto:{Constants.AuthorEmail}?body=";
         public const string Messenger = "fb-messenger://share/?link=";
         public const string Sms = "sms:?body=";
         public const string WhatsUp = "https://api.whatsapp.com/send?text=";

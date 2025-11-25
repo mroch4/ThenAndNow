@@ -1,14 +1,17 @@
 {
   "rules": {
-    "replies": {
-      ".read": true,
-      ".write": true
-    },
     "votes2": {
       ".read": true,
-      ".write": true,
       "$item": {
-        ".validate": "newData.hasChildren(['a', 'b']) && newData.child('a').isNumber() && newData.child('b').isNumber() && newData.child('b').val() >= 0"
+        ".write": "newData.hasChildren(['a', 'b']) && newData.child('a').isNumber() && newData.child('b').isNumber() && newData.child('b').val() >= 0"
+      }
+    },
+    "replies": {
+      ".read": true,
+      "$group": {
+        "$item": {
+          ".write": "newData.hasChildren(['a','b','d','e']) && newData.child('a').isNumber() && newData.child('a').val() > 1762828800000 && newData.child('b').isString() && newData.child('b').val().length < 25 && newData.child('d').isString() && newData.child('d').val().length < 500 && newData.child('e').isString() && newData.child('e').val().length == 6"
+        }
       }
     }
   }

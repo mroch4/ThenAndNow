@@ -170,17 +170,6 @@ p {
   height: 50vh;
 }
 
-.avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  color: white;
-  font-size: 0.85rem;
-  height: 2rem;
-  width: 2rem;
-}
-
 .btn-social {
   width: 60px;
   padding-top: 2px;
@@ -227,6 +216,17 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 0.85rem;
+  height: 2rem;
+  width: 2rem;
 }
 
 .tag {

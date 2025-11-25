@@ -1,17 +1,7 @@
-﻿using ThenAndNow.Models;
-
-namespace ThenAndNow.Interfaces
+﻿namespace ThenAndNow.Interfaces
 {
     public interface IUserService
     {
-        #region Authentication
-
-        public Task<User> GetUserAuth();
-        public Task<User> SignInWithGoogle();
-        public Task SignOut();
-
-        #endregion
-
         #region User Preferences
 
         public Task<bool> GetBannerClosed();

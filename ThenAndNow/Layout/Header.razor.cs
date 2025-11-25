@@ -14,7 +14,7 @@ namespace ThenAndNow.Layout
 
         #endregion
 
-        private readonly NavItem[] _navItems =
+        private static readonly NavItem[] NavItems =
         [
             new()
             {

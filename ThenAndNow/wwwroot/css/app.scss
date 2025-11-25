@@ -205,15 +205,6 @@ p {
     height: 50vh;
 }
 
-.avatar {
-    @include flex-center();
-    border-radius: 50%;
-    color: white;
-    font-size: 0.85rem;
-    height: 2rem;
-    width: 2rem;
-}
-
 .btn-social {
     width: 60px;
     padding-top: 2px;
@@ -266,6 +257,15 @@ p {
 
 .flex-center {
     @include flex-center();
+}
+
+.icon {
+    @include flex-center();
+    border-radius: 50%;
+    color: white;
+    font-size: 0.85rem;
+    height: 2rem;
+    width: 2rem;
 }
 
 .tag {

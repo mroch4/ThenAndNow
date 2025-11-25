@@ -85,7 +85,7 @@ namespace ThenAndNow.Components
             SocialMediaType.XTwitter,
             SocialMediaType.LinkedIn,
             SocialMediaType.Sms,
-            SocialMediaType.Mailto,
+            SocialMediaType.MailTo,
             SocialMediaType.Copy
         ];
     }

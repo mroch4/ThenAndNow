@@ -2,37 +2,7 @@
 {
     public static class Labels
     {
-        #region HeaderComponent
-
-        public const string ThenAndNow = "dawniej & dziś";
-
-        #endregion
-
-        #region Navbar
-
-        public const string Contact = "Kontakt";
-        public const string Map = "Mapa";
-        public const string Random = "Losuj";
-        public const string Tags = "Tagi";
-
-        #endregion
-
-        #region FooterComponent
-
-        public const string Author = "Marcin Rochowski";
-
-        #endregion
-
-        #region ContactPage
-
-        public const string Cyryl = "CYRYL - Wirtualne Muzeum Historii Poznania";
-        public const string Email = "rochowski.marcin(at)gmail.com";
-        public const string Fotopolska = "FOTOPOLSKA - Baza zdjęć Poznania";
-        public const string Sources = "Zasoby zdjęć historycznych:";
-
-        #endregion
-
-        #region BannerComponent
+        #region Components > Banner
 
         public const string BannerHeading = "Pierwszy raz na blogu?";
         public const string BannerQuestion = "Oto kilka wskazówek, które ułatwią Ci nawigowanie po stronie:";
@@ -43,7 +13,7 @@
 
         #endregion
 
-        #region CardComponent
+        #region Components > Card
 
         public const string FigcaptionBase = "Data wykonania zdjęcia: ";
         public const string MapIcon = "Pokaż na mapie";
@@ -57,14 +27,13 @@
 
         #endregion
 
-        #region NoData
+        #region Components > Loader
 
-        public const string NavigateToHomepage = "Powrót do strony głównej";
-        public const string NoData = "Brak wyników spełniających kryteria wyszukiwania.";
+        public const string Loading = "Ładowanie...";
 
         #endregion
 
-        #region SocialBox
+        #region Components > SocialBox
 
         public const string AddReply = "Dodaj komentarz";
         public const string AddFirstReply = "Dodaj pierwszy komentarz!";
@@ -74,6 +43,49 @@
         public const string ReplyAuthor = "Autor";
         public const string ReplyContent = "Treść komentarza...";
         public const string Submit = "Wyślij";
+
+        #endregion
+
+        #region Layout > Header
+
+        public const string ThenAndNow = "dawniej & dziś";
+
+        #endregion
+
+        #region Layout > Navbar
+
+        public const string Contact = "Kontakt";
+        public const string Map = "Mapa";
+        public const string Random = "Losuj";
+        public const string Tags = "Tagi";
+
+        #endregion
+
+        #region Layout > Main
+
+        public const string PageTitle = "Poznań | Dawniej & Dziś";
+
+        #endregion
+
+        #region Layout > Footer
+
+        public const string Author = "Marcin Rochowski";
+
+        #endregion
+
+        #region Pages > Contact
+
+        public const string Cyryl = "CYRYL - Wirtualne Muzeum Historii Poznania";
+        public const string Email = "rochowski.marcin(at)gmail.com";
+        public const string Fotopolska = "FOTOPOLSKA - Baza zdjęć Poznania";
+        public const string Sources = "Zasoby zdjęć historycznych:";
+
+        #endregion
+
+        #region Pages > Home
+
+        public const string OriginalPhotoFirst = "Oryginalne zdjęcie jako pierwsze";
+        public const string TagsResult = "Rezultaty wyszukiwania dla tagu: ";
 
         #endregion
 
@@ -99,10 +111,8 @@
 
         #endregion
 
-        public const string Loading = "Ładowanie...";
+        public const string NavigateToHomepage = "Powrót do strony głównej";
+        public const string NoData = "Brak wyników spełniających kryteria wyszukiwania.";
         public const string NotFound = "Niestety, nie udało znaleźć się strony pod tym adresem.";
-        public const string OriginalPhotoFirst = "Oryginalne zdjęcie jako pierwsze";
-        public const string PageTitle = "Poznań | Dawniej & Dziś";
-        public const string TagsResult = "Rezultaty wyszukiwania dla tagu: ";
     }
 }

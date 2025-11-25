@@ -5,6 +5,8 @@ namespace ThenAndNow.Components
 {
     public partial class Loader
     {
+        #region Parameters
+
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
@@ -14,7 +16,13 @@ namespace ThenAndNow.Components
         [Parameter]
         public bool NotFound { get; set; }
 
+        #endregion
+
+        #region Dependency Injection
+
         [Inject]
         private INavigationService NavigationService { get; set; }
+
+        #endregion
     }
 }

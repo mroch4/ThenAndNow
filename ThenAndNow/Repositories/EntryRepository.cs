@@ -194,9 +194,6 @@ namespace ThenAndNow.Repositories
         private Details[] Details { get; set; }
 
         private const string EntriesPath = "json/entries.json";
-        //private const string EntriesPath = "json/new.json";
-        //private const string EntriesPath = "json/stw.json";
-
         private const string DetailsPath = "json/details.json";
     }
 }
