@@ -15,7 +15,7 @@ window.blazorInterop = {
         }
     },
 
-    scrollTop: function scrollTop(elementId) {
+    scrollTop: function scrollTop() {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
 };
